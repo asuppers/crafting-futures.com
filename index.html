@@ -4,52 +4,57 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Crafting Futures – Uganda</title>
+<link rel="icon" type="image/png" href="images/logo-icon.png" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   :root {
-    --orange: #e07b39;
-    --orange-light: #f5a96a;
-    --brown: #5c3a1e;
-    --beige: #f5efe6;
-    --beige-dark: #ede0ce;
-    --text: #3a2a1a;
-    --text-light: #7a5c3a;
+    --orange: #e0a83d;
+    --orange-light: #edc272;
+    --brown: #33455e;
+    --beige: #f6f4ec;
+    --beige-dark: #ece7d8;
+    --text: #2b2f36;
+    --text-light: #6b6f76;
     --white: #ffffff;
+    --green: #6e8f3e;
+    --green-light: #a8c97a;
   }
-
   body { font-family: 'Georgia', serif; color: var(--text); background: var(--white); }
-
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
-    background: var(--brown); color: white;
+    background: var(--white); color: var(--brown);
+    box-shadow: 0 2px 12px rgba(51,69,94,0.08);
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 40px; height: 68px;
+    padding: 0 40px; height: 92px;
   }
-  .nav-logo { font-size: 1.4rem; font-weight: bold; letter-spacing: 0.05em; color: white; text-decoration: none; }
-  .nav-logo span { color: var(--orange-light); }
+  .nav-logo { display: flex; align-items: center; gap: 12px; font-size: 1.4rem; font-weight: bold; letter-spacing: 0.05em; color: var(--brown); text-decoration: none; }
+  .nav-logo img { height: 72px; width: auto; display: block; }
+  .nav-logo span { color: var(--green); }
   .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a { color: white; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.2s; font-family: Arial, sans-serif; }
-  .nav-links a:hover { color: var(--orange-light); }
+  .nav-links a { color: var(--brown); text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.2s; font-family: Arial, sans-serif; }
+  .nav-links a:hover { color: var(--orange); }
   .nav-donate {
     background: var(--orange); color: white; padding: 10px 24px;
     border-radius: 999px; text-decoration: none; font-size: 0.85rem;
     font-family: Arial, sans-serif; font-weight: bold; letter-spacing: 0.05em;
     transition: background 0.2s;
   }
-  .nav-donate:hover { background: var(--orange-light); }
-
+  .nav-donate:hover { background: var(--brown); }
   /* HERO */
   .hero {
     height: 100vh; display: flex; align-items: center; justify-content: center;
-    text-align: center; color: white; position: relative; overflow: hidden;
-    background: linear-gradient(135deg, #5c3a1e 0%, #8b5e3c 40%, #c4762e 100%);
+    text-align: center; color: var(--brown); position: relative; overflow: hidden;
+    background: var(--beige);
   }
   .hero-overlay {
     position: absolute; inset: 0;
-    background: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80') center/cover no-repeat;
-    opacity: 0.25;
+    background: url('images/hero.jpg') center/cover no-repeat;
+    opacity: 0.55;
+  }
+  .hero::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(246,244,236,0.55) 0%, rgba(246,244,236,0.85) 100%);
   }
   .hero-content { position: relative; z-index: 1; padding: 0 20px; }
   .hero-tag {
@@ -58,23 +63,22 @@
     letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 24px;
     font-family: Arial, sans-serif;
   }
-  .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: normal; margin-bottom: 16px; line-height: 1.15; }
-  .hero h1 span { color: var(--orange-light); }
-  .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 36px; opacity: 0.9; font-style: italic; }
+  .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: normal; margin-bottom: 16px; line-height: 1.15; color: var(--brown); }
+  .hero h1 span { color: var(--green); }
+  .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 36px; color: var(--text-light); font-style: italic; }
   .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
   .btn-primary {
     background: var(--orange); color: white; padding: 14px 32px;
     border-radius: 999px; text-decoration: none; font-family: Arial, sans-serif;
     font-weight: bold; transition: background 0.2s; font-size: 0.95rem;
   }
-  .btn-primary:hover { background: var(--orange-light); }
+  .btn-primary:hover { background: var(--brown); }
   .btn-outline {
-    border: 2px solid white; color: white; padding: 14px 32px;
+    border: 2px solid var(--brown); color: var(--brown); padding: 14px 32px;
     border-radius: 999px; text-decoration: none; font-family: Arial, sans-serif;
     font-weight: bold; transition: all 0.2s; font-size: 0.95rem;
   }
-  .btn-outline:hover { background: white; color: var(--brown); }
-
+  .btn-outline:hover { background: var(--brown); color: white; }
   /* SECTIONS */
   section { padding: 80px 40px; }
   .section-label {
@@ -83,14 +87,13 @@
   }
   h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: normal; color: var(--brown); margin-bottom: 20px; }
   .section-intro { font-size: 1.1rem; color: var(--text-light); max-width: 700px; line-height: 1.8; }
-
   /* WHO WE ARE */
   #about { background: var(--beige); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1100px; margin: 0 auto; align-items: center; }
   .about-image {
     border-radius: 2rem; overflow: hidden; height: 420px;
-    background: url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&q=80') center/cover;
-    box-shadow: 0 20px 60px rgba(92,58,30,0.2);
+    background: url('images/about.jpg') center/cover;
+    box-shadow: 0 20px 60px rgba(27,42,74,0.2);
   }
   .about-text h2 { margin-bottom: 16px; }
   .about-text p { color: var(--text-light); line-height: 1.9; margin-bottom: 16px; }
@@ -101,13 +104,21 @@
   }
   .team-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
   .team-member span { font-family: Arial, sans-serif; font-size: 0.95rem; color: var(--brown); }
-
+  .team-member-combined {
+    width: 100%; border: none; cursor: pointer; text-align: left;
+    justify-content: space-between; flex-wrap: wrap; row-gap: 6px;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .team-member-combined:hover { background: var(--beige); box-shadow: 0 4px 16px rgba(27,42,74,0.1); }
+  .team-photo-hint { font-size: 0.78rem; color: var(--orange); font-style: italic; }
+  .photo-modal-box { padding: 12px; max-width: 560px; }
+  .photo-modal-box img { width: 100%; border-radius: 1rem; display: block; }
+  .photo-modal-box .modal-close { top: 22px; right: 22px; background: rgba(255,255,255,0.9); border-radius: 50%; width: 32px; height: 32px; }
   /* PROJECTS */
   #projects { background: white; }
   .projects-inner { max-width: 1100px; margin: 0 auto; }
   .projects-header { text-align: center; margin-bottom: 60px; }
   .projects-header .section-intro { margin: 0 auto; }
-
   .project-card {
     background: var(--beige); border-radius: 2rem; padding: 48px;
     margin-bottom: 40px;
@@ -116,10 +127,9 @@
   .project-card:nth-child(even) { grid-template-columns: 2fr 1fr; }
   .project-card:nth-child(even) .project-img { order: 2; }
   .project-card:nth-child(even) .project-content { order: 1; }
-
   .project-img {
     border-radius: 1.5rem; height: 280px; background: center/cover no-repeat;
-    box-shadow: 0 10px 30px rgba(92,58,30,0.15);
+    box-shadow: 0 10px 30px rgba(27,42,74,0.15);
   }
   .project-date {
     font-family: Arial, sans-serif; font-size: 0.75rem; text-transform: uppercase;
@@ -132,21 +142,69 @@
     background: white; border: 1px solid var(--orange-light);
     color: var(--brown); padding: 6px 14px; border-radius: 999px;
     font-size: 0.8rem; font-family: Arial, sans-serif;
+    cursor: pointer; transition: all 0.2s; outline: none;
   }
-
+  .workshop-tag:hover { background: var(--orange); color: white; border-color: var(--orange); }
+  /* MODAL */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(27,42,74,0.55);
+    z-index: 1000; align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: white; border-radius: 1.5rem; padding: 36px; max-width: 460px;
+    width: 100%; position: relative; box-shadow: 0 20px 60px rgba(27,42,74,0.3);
+  }
+  .modal-close {
+    position: absolute; top: 16px; right: 20px; background: none; border: none;
+    font-size: 1.4rem; color: var(--text-light); cursor: pointer; line-height: 1;
+  }
+  .modal-close:hover { color: var(--brown); }
+  .modal-box h3 { color: var(--brown); font-size: 1.3rem; margin-bottom: 14px; padding-right: 20px; }
+  .modal-box p { color: var(--text-light); font-family: Arial, sans-serif; font-size: 0.95rem; line-height: 1.7; }
+  .project-card.upcoming { background: white; border: 2px dashed var(--green); }
+  .upcoming-tag {
+    display: inline-block; background: var(--green); color: white;
+    padding: 4px 14px; border-radius: 999px; font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    font-family: Arial, sans-serif; font-weight: bold; margin-bottom: 10px;
+  }
+  /* MILESTONES (2025 timeline) */
+  .milestones-label { text-align: center; margin-bottom: 24px; }
+  .milestone-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 56px; }
+  .milestone-item {
+    display: flex; gap: 20px; align-items: center;
+    background: var(--beige); border-radius: 1.5rem; padding: 16px;
+  }
+  .milestone-img {
+    width: 96px; height: 96px; border-radius: 1rem; flex-shrink: 0;
+    background: center/cover no-repeat; border: none; padding: 0;
+    cursor: pointer; transition: transform 0.2s;
+  }
+  .milestone-img:hover { transform: scale(1.05); }
+  .zoomable:hover { opacity: 0.88; }
+  .about-image.zoomable, .project-img.zoomable, .hfaac-image.zoomable {
+    display: block; width: 100%; border: none; padding: 0; cursor: pointer;
+    font: inherit; transition: opacity 0.2s;
+  }
+  .milestone-date {
+    font-family: Arial, sans-serif; font-size: 0.72rem; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--orange); margin-bottom: 4px;
+  }
+  .milestone-text h4 { color: var(--brown); font-size: 1.05rem; margin-bottom: 4px; }
+  .milestone-text p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; font-family: Arial, sans-serif; margin: 0; }
   /* IMPACT */
-  #impact { background: var(--brown); color: white; }
+  #impact { background: var(--beige-dark); }
   .impact-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
-  .impact-inner h2 { color: white; margin-bottom: 16px; }
-  .impact-inner .section-intro { color: rgba(255,255,255,0.8); margin: 0 auto 60px; }
+  .impact-inner h2 { color: var(--brown); margin-bottom: 16px; }
+  .impact-inner .section-intro { color: var(--text-light); margin: 0 auto 60px; }
   .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
   .impact-card {
-    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    background: white; border: 1px solid rgba(51,69,94,0.08);
     border-radius: 1.5rem; padding: 32px 20px;
   }
-  .impact-number { font-size: 2.8rem; color: var(--orange-light); margin-bottom: 8px; }
-  .impact-label { font-family: Arial, sans-serif; font-size: 0.85rem; opacity: 0.8; line-height: 1.4; }
-
+  .impact-number { font-size: 2.8rem; color: var(--orange); margin-bottom: 8px; font-weight: bold; }
+  .impact-label { font-family: Arial, sans-serif; font-size: 0.85rem; color: var(--text-light); line-height: 1.4; }
   /* VISION */
   #vision { background: var(--beige); }
   .vision-inner { max-width: 900px; margin: 0 auto; }
@@ -154,7 +212,7 @@
   .vision-item {
     display: flex; gap: 20px; align-items: flex-start;
     background: white; padding: 24px 28px; border-radius: 1.5rem;
-    box-shadow: 0 4px 20px rgba(92,58,30,0.08);
+    box-shadow: 0 4px 20px rgba(27,42,74,0.08);
   }
   .vision-number {
     width: 40px; height: 40px; border-radius: 50%; background: var(--orange);
@@ -163,9 +221,8 @@
   }
   .vision-text h4 { color: var(--brown); margin-bottom: 6px; font-size: 1rem; }
   .vision-text p { color: var(--text-light); font-size: 0.9rem; line-height: 1.7; font-family: Arial, sans-serif; }
-
   /* DONATE */
-  #donate { background: linear-gradient(135deg, var(--orange) 0%, #c4762e 100%); color: white; text-align: center; }
+  #donate { background: linear-gradient(135deg, var(--orange) 0%, #b8842a 100%); color: white; text-align: center; }
   #donate h2 { color: white; margin-bottom: 16px; }
   #donate p { max-width: 600px; margin: 0 auto 40px; opacity: 0.9; font-size: 1.1rem; line-height: 1.8; }
   .donate-options { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
@@ -176,30 +233,50 @@
   }
   .donate-btn:hover { background: var(--brown); color: white; }
   .donate-note { font-size: 0.85rem; opacity: 0.8; font-family: Arial, sans-serif; }
-
+  .help-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+    max-width: 1100px; margin: 0 auto 48px;
+  }
+  .help-card {
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 1.25rem; padding: 22px 16px; text-align: center;
+    display: block; text-decoration: none; color: white; cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .help-card:hover { background: rgba(255,255,255,0.28); transform: translateY(-3px); }
+  .help-icon { font-size: 1.8rem; margin-bottom: 10px; }
+  .help-card h4 { font-family: Arial, sans-serif; font-size: 0.9rem; margin-bottom: 6px; }
+  .help-card p { font-family: Arial, sans-serif; font-size: 0.78rem; opacity: 0.85; line-height: 1.4; margin: 0; }
   /* HFAAC */
   #hfaac { background: white; }
-  .hfaac-inner { max-width: 800px; margin: 0 auto; text-align: center; }
-  .hfaac-logo-box {
-    width: 80px; height: 80px; background: var(--beige); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 24px; font-size: 2rem;
+  .hfaac-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1100px; margin: 0 auto; align-items: center; }
+  .hfaac-image {
+    border-radius: 2rem; overflow: hidden; height: 380px;
+    background: url('images/hfaac.jpg') center/cover;
+    box-shadow: 0 20px 60px rgba(27,42,74,0.2);
   }
-  .hfaac-inner p { color: var(--text-light); line-height: 1.8; margin-bottom: 32px; }
+  .hfaac-inner { text-align: left; }
+  .hfaac-inner h2 { margin-bottom: 16px; }
+  .hfaac-inner p { color: var(--text-light); line-height: 1.8; margin-bottom: 18px; }
+  .hfaac-facts { list-style: none; margin: 0 0 28px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .hfaac-facts li {
+    font-family: Arial, sans-serif; font-size: 0.92rem; color: var(--brown);
+    padding-left: 22px; position: relative; line-height: 1.5;
+  }
+  .hfaac-facts li::before { content: '●'; color: var(--orange); position: absolute; left: 0; font-size: 0.6rem; top: 6px; }
   .hfaac-link {
     display: inline-block; background: var(--brown); color: white;
     padding: 14px 36px; border-radius: 999px; text-decoration: none;
     font-family: Arial, sans-serif; font-weight: bold; transition: background 0.2s;
   }
   .hfaac-link:hover { background: var(--orange); }
-
   /* FOOTER */
   footer {
-    background: var(--brown); color: white; text-align: center;
+    background: var(--beige); color: var(--brown); text-align: center;
+    border-top: 3px solid var(--orange);
     padding: 40px; font-family: Arial, sans-serif; font-size: 0.85rem;
   }
-  footer p { opacity: 0.7; margin-top: 8px; }
-
+  footer p { color: var(--text-light); margin-top: 8px; }
   @media (max-width: 768px) {
     nav { padding: 0 20px; }
     .nav-links { display: none; }
@@ -209,14 +286,17 @@
     .project-card:nth-child(even) .project-img { order: 1; }
     .project-card:nth-child(even) .project-content { order: 2; }
     .impact-grid { grid-template-columns: repeat(2, 1fr); }
+    .hfaac-grid { grid-template-columns: 1fr; }
+    .milestone-item { flex-direction: column; align-items: flex-start; }
+    .milestone-img { width: 100%; height: 160px; }
+    .help-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">Crafting <span>Futures</span></a>
+  <a href="#" class="nav-logo"><img src="images/logo-icon.png" alt="Crafting Futures logo" />Crafting <span>Futures</span></a>
   <ul class="nav-links">
     <li><a href="#about">Who We Are</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -226,7 +306,6 @@
   </ul>
   <a href="#donate" class="nav-donate">❤ Donate</a>
 </nav>
-
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-overlay"></div>
@@ -240,103 +319,150 @@
     </div>
   </div>
 </section>
-
 <!-- WHO WE ARE -->
 <section id="about">
   <div class="about-grid">
-    <div class="about-image"></div>
+    <button class="about-image zoomable" data-img="images/about.jpg" aria-label="Enlarge photo"></button>
     <div class="about-text">
       <div class="section-label">Who We Are</div>
       <h2>A small team with a big heart</h2>
-      <p>Crafting Futures is a volunteer initiative founded by a group of passionate Austrians who believe that creativity and practical skills can transform lives. In partnership with <strong>Hands for an African Child (HFAAC)</strong> in Bukomero, Uganda, we run hands-on crafting and skills programs for children, teachers, and mothers.</p>
-      <p>Our first project took place in November 2025 at NURI Primary School in Bukomero — and we are already back in July 2026 with new workshops, new ideas and even more energy.</p>
+      <p>After a private visit to the children's home with her family in the summer of 2024, Marcella L. had an idea: to open up space for creative thinking and hands-on making. Andreas S. and Anne S. later joined her — together we believe that creativity and practical skills can transform lives. In partnership with <strong>Hands for an African Child (HFAAC)</strong> in Bukomero, Uganda, we run hands-on crafting and skills programs first and foremost for the orphaned children of HFAAC — while their teachers and parents grow right alongside them, learning new skills of their own along the way.</p>
+      <p>Our first volunteers, Hannah and Emily, arrived in February 2025 and spent six weeks laying the groundwork. Since then, 15 volunteers have taught on-site for a combined ten weeks, and we've helped hire and train seven local trainers — three in computer skills, two in crocheting and handcrafts, one in machine sewing, and one in motorbike riding & maintenance — who now teach every week during term time. We're already back for our second intensive course in July 2026.</p>
       <p>We are not a large NGO. We are people who show up, roll up their sleeves and craft something meaningful — together with the community.</p>
       <div class="team-list">
-        <div class="team-member"><div class="team-dot"></div><span>Marcella Lex</span></div>
-        <div class="team-member"><div class="team-dot"></div><span>Andreas Suppersberger</span></div>
-        <div class="team-member"><div class="team-dot"></div><span>Anne Suppersberger</span></div>
+        <button class="team-member team-member-combined" id="team-photo-trigger">
+          <div class="team-dot"></div>
+          <span>Marcella L. &nbsp;·&nbsp; Andreas S. &nbsp;·&nbsp; Anne S.</span>
+          <span class="team-photo-hint">📷 tap to see us</span>
+        </button>
       </div>
     </div>
   </div>
 </section>
-
 <!-- PROJECTS -->
 <section id="projects">
   <div class="projects-inner">
     <div class="projects-header">
       <div class="section-label">Our Projects</div>
       <h2>From idea to reality</h2>
-      <p class="section-intro">Each visit brings new workshops, new skills and new friendships. Here is what we have done so far.</p>
+      <p class="section-intro">Each visit brings new workshops, new skills and new friendships. Here is how 2025 unfolded, week by week — and where we are now.</p>
     </div>
 
-    <!-- PROJECT 1 -->
-    <div class="project-card">
-      <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&q=80');"></div>
-      <div class="project-content">
-        <div class="project-date">📅 October 31 – November 13, 2025 · NURI Primary School, Bukomero</div>
-        <h3>Project 1 – Volunteer Skills Program</h3>
-        <p>Our first two-week stay introduced practical crafting and technical skills to children, teachers and parents. Through interactive workshops we taught woodworking, crocheting, sewing and much more — leaving behind three trained local craft teachers to continue the program.</p>
-        <div class="workshop-list">
-          <span class="workshop-tag">🪵 Wood Crafting</span>
-          <span class="workshop-tag">🔑 Wooden Keychains</span>
-          <span class="workshop-tag">✂️ Cutting Boards</span>
-          <span class="workshop-tag">🧶 Crochet Workshops</span>
-          <span class="workshop-tag">🪡 Hand Sewing</span>
-          <span class="workshop-tag">🧸 Handmade Dolls</span>
-          <span class="workshop-tag">🪢 Door Mats</span>
-          <span class="workshop-tag">👑 Felt Crowns</span>
-          <span class="workshop-tag">👩‍🏫 Teacher Training</span>
-          <span class="workshop-tag">👩 Mothers Training</span>
+    <div class="milestones-label">
+      <div class="section-label">2025 Timeline</div>
+    </div>
+    <div class="milestone-list">
+      <div class="milestone-item">
+        <button class="milestone-img zoomable" data-img="images/timeline-febapr.jpg" style="background-image: url('images/timeline-febapr.jpg');" aria-label="Enlarge photo"></button>
+        <div class="milestone-text">
+          <div class="milestone-date">February – April 2025</div>
+          <h4>Hannah & Emily — our first volunteers</h4>
+          <p>The project kicks off! Over six weeks, Hannah and Emily work with the children on bracelets, carved figures, sewn pillows, clay, mobiles — and bake a lot of cookies together. They lay the groundwork for everything that follows.</p>
+        </div>
+      </div>
+      <div class="milestone-item">
+        <button class="milestone-img zoomable" data-img="images/timeline-may.jpg" style="background-image: url('images/timeline-may.jpg');" aria-label="Enlarge photo"></button>
+        <div class="milestone-text">
+          <div class="milestone-date">May 2025</div>
+          <h4>Teacher Esther starts teaching textiles</h4>
+          <p>Our first local craft teacher joins. Esther specializes in traditional techniques like weaving baskets and mats from banana fibre, and begins regular textile lessons with the children.</p>
+        </div>
+      </div>
+      <div class="milestone-item">
+        <button class="milestone-img zoomable" data-img="images/timeline-aug.jpg" style="background-image: url('images/timeline-aug.jpg');" aria-label="Enlarge photo"></button>
+        <div class="milestone-text">
+          <div class="milestone-date">July – August 2025</div>
+          <h4>Teacher Filder joins — Boris, Sarah & Laura visit</h4>
+          <p>Teacher Filder starts teaching textile work in July. In August, volunteers Boris, Sarah and Laura spend 2.5 weeks on-site, explore the local market, buy the first jigsaws and drills, and connect with Patrick, a foster father at HFAAC with a real talent for woodwork — expanding the program into technical crafts.</p>
         </div>
       </div>
     </div>
 
+    <!-- PROJECT 1 -->
+    <div class="project-card">
+      <button class="project-img zoomable" data-img="images/project1.jpg" style="background-image: url('images/project1.jpg');" aria-label="Enlarge photo"></button>
+      <div class="project-content">
+        <div class="project-date">📅 31 October – 13 November 2025 · HFAAC Bukomero</div>
+        <h3>Project 1 – Volunteer Skills Program</h3>
+        <p>Marcella L., Andreas S. and Anne S. spend two weeks on-site leading the first dedicated project week — around 40 children work in depth on technical and textile skills. Teachers Esther and Filder help lead the handcrafting sessions, and Patrick, a foster father at HFAAC with a natural talent for woodwork, joins as our third local craft teacher. Every goal we set out with was achieved — and all three have kept the program running every week since we left in November 2025.</p>
+        <div class="workshop-list">
+          <button class="workshop-tag" data-detail="All students learned how to measure, saw, sand, oil and decorate wooden pieces using a manual mitre box saw and a pyrography pen. Two full sets of a Mölkky game were produced and played, and a template set was left with the school.">🪵 Wood Crafting (Mölkky Game)</button>
+          <button class="workshop-tag" data-detail="Small wooden keychains were produced using a cordless jigsaw, pyrography pen and cordless drill — training measuring, creativity and cutting skills.">🔑 Wooden Keychains</button>
+          <button class="workshop-tag" data-detail="Students created wooden cutting boards with a fretsaw, cordless jigsaw and pyrography pen, applying measurement techniques, safe cutting and creative decoration.">✂️ Cutting Boards</button>
+          <button class="workshop-tag" data-detail="Children independently produced ABC and number learning blocks for the school using a manual mitre box saw and pyrography pen, fostering initiative, problem-solving and collaboration.">🔤 Learning Blocks (ABC & Numbers)</button>
+          <button class="workshop-tag" data-detail="Participants crocheted bag appliqués and sewed them onto bags, learning basic crocheting and hand sewing skills.">🧶 Crochet & Fabric</button>
+          <button class="workshop-tag" data-detail="Handmade dolls were stuffed and decorated by hand, strengthening fine motor control, patience and artistic development.">🧸 Handmade Dolls</button>
+          <button class="workshop-tag" data-detail="Door mats were crocheted with children and adults — showing that simple crochet techniques can create beautiful, useful everyday items.">🪢 Door Mats</button>
+          <button class="workshop-tag" data-detail="Felt crowns were sewn and designed using templates, teaching hand sewing skills, motif design and creativity.">👑 Felt Crowns</button>
+          <button class="workshop-tag" data-detail="Teachers Esther and Filder helped lead the handcrafting sessions, and Patrick — a foster father at HFAAC with a natural talent for woodwork — joined as our third local craft teacher. All three have kept teaching every week since November 2025.">👩‍🏫 Teacher Training</button>
+          <button class="workshop-tag" data-detail="Mothers were taught crocheting and knitting techniques with hooks, needles and wool — building sustainability and local empowerment.">👩 Mothers Training</button>
+        </div>
+      </div>
+    </div>
     <!-- PROJECT 2 -->
     <div class="project-card">
-      <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&q=80');"></div>
+      <button class="project-img zoomable" data-img="images/project2.jpg" style="background-image: url('images/project2.jpg');" aria-label="Enlarge photo"></button>
       <div class="project-content">
-        <div class="project-date">📅 July 2026 · NURI Primary School, Bukomero</div>
+        <div class="project-date">📅 4 – 19 July 2026 · HFAAC Bukomero</div>
         <h3>Project 2 – Building on What We Started</h3>
-        <p>Back in Bukomero with new energy and new workshops! Building on the foundation of our first visit, we expanded the program with advanced skills, more participants and a growing vision for a self-sustaining craft education centre.</p>
+        <p>Back in Bukomero for our second intensive course! This visit we tackle two of our big 2026 goals at once: setting up a computer lab and introducing sewing machines — alongside advanced woodworking and crochet. Our local team grows to seven trainers: three in computer skills, one in machine sewing, one in motorbike riding & maintenance, and two continuing in crocheting and handcrafts. Tap any workshop below for details.</p>
         <div class="workshop-list">
-          <span class="workshop-tag">🪵 Advanced Woodworking</span>
-          <span class="workshop-tag">🧶 Advanced Crochet</span>
-          <span class="workshop-tag">🪡 Sewing</span>
-          <span class="workshop-tag">♻️ Creative Recycling</span>
-          <span class="workshop-tag">👩‍🏫 Teacher Development</span>
+          <button class="workshop-tag" data-detail="Building on 2025's basics, students tackle more complex wood projects — refining measuring, sawing and finishing skills with the existing hand tools.">🪵 Advanced Woodworking</button>
+          <button class="workshop-tag" data-detail="Esther and Filder take returning students further into stramin crochet, bag appliqués and freeform pieces, building on the techniques learned in November 2025.">🧶 Advanced Crochet</button>
+          <button class="workshop-tag" data-detail="Several sewing machines were brought in, moving beyond hand sewing. One local trainer now teaches machine sewing every week.">🪡 Sewing Machines</button>
+          <button class="workshop-tag" data-detail="A new computer lab was set up with modern hardware — HP EliteBook laptops, Dell monitors, a networked printer and WiFi — and three local trainers were hired to teach computer skills.">💻 Computer Lab</button>
+          <button class="workshop-tag" data-detail="A motorbike was purchased for the program, and one local trainer now teaches riding and basic maintenance.">🏍️ Motorbike Riding & Maintenance</button>
+          <button class="workshop-tag" data-detail="Our growing local team of seven trainers gets continued coaching and support to keep the program running week to week, term after term.">👩‍🏫 Teacher Development</button>
+        </div>
+      </div>
+    </div>
+    <!-- PROJECT 3 (UPCOMING) -->
+    <div class="project-card upcoming">
+      <button class="project-img zoomable" data-img="images/project3.jpg" style="background-image: url('images/project3.jpg');" aria-label="Enlarge photo"></button>
+      <div class="project-content">
+        <span class="upcoming-tag">🔜 Next Up</span>
+        <div class="project-date">📅 Coming soon · HFAAC Bukomero</div>
+        <h3>Project 3 – Connecting HFAAC</h3>
+        <p>Our next project is already in the pipeline: bringing internet to the entire HFAAC compound — from the medical center and community building to the teacher homes, office buildings and all the way up to the family homes. We'll start with a microwave data link over a fibre (glasfibre) connection with WiFi access points across the site, and switch to Starlink once it becomes available in the area.</p>
+        <p style="font-size: 0.9rem; color: var(--text-light);">A huge thank you to <strong>Terry</strong> from the US, who is generously supporting this project — and who will help bring Starlink to HFAAC once it's available in the area.</p>
+        <div class="workshop-list">
+          <button class="workshop-tag" data-detail="A wireless microwave data link will bring broadband to the HFAAC compound as the first step of the rollout.">📡 Microwave Data Link</button>
+          <button class="workshop-tag" data-detail="A fibre (glasfibre) backbone connects the core buildings for fast, stable internet across the site.">🌐 Fibre Connection</button>
+          <button class="workshop-tag" data-detail="WiFi access points spread the connection across the whole compound — from the medical center to the family homes.">📶 WiFi Access Points</button>
+          <button class="workshop-tag" data-detail="Once available in the area, the connection will be upgraded to Starlink satellite internet for even better speed and reliability.">🛰️ Starlink (future upgrade)</button>
+          <button class="workshop-tag" data-detail="Reliable internet will support the medical center's record-keeping and communication with outside doctors and specialists.">🏥 Medical Center</button>
+          <button class="workshop-tag" data-detail="The rollout reaches all the way up to the family homes — so every part of HFAAC gets connected, not just the school and offices.">🏠 Family Homes</button>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- IMPACT -->
 <section id="impact">
   <div class="impact-inner">
     <div class="section-label" style="color: var(--orange-light);">Our Impact</div>
     <h2>Numbers that matter</h2>
-    <p class="section-intro">In just two visits, Crafting Futures has already made a real difference in the Bukomero community.</p>
+    <p class="section-intro">Straight from our 2025 annual report — the real difference Crafting Futures has made in the Bukomero community so far.</p>
     <div class="impact-grid">
       <div class="impact-card">
-        <div class="impact-number">2</div>
-        <div class="impact-label">Volunteer visits to Bukomero</div>
+        <div class="impact-number">15</div>
+        <div class="impact-label">Volunteers who taught on-site in 2025/2026</div>
       </div>
       <div class="impact-card">
-        <div class="impact-number">3</div>
-        <div class="impact-label">Local craft teachers trained & employed</div>
+        <div class="impact-number">10</div>
+        <div class="impact-label">Combined weeks spent teaching on the ground</div>
       </div>
       <div class="impact-card">
-        <div class="impact-number">10+</div>
-        <div class="impact-label">Different workshops delivered</div>
+        <div class="impact-number">7</div>
+        <div class="impact-label">Local staff trained & employed</div>
       </div>
       <div class="impact-card">
-        <div class="impact-number">100+</div>
-        <div class="impact-label">Children, teachers & mothers reached</div>
+        <div class="impact-number">100%</div>
+        <div class="impact-label">Of every donation goes directly into the project</div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- VISION -->
 <section id="vision">
   <div class="vision-inner">
@@ -345,65 +471,150 @@
     <p class="section-intro">With continued support, Crafting Futures aims to grow into a self-sustaining craft education centre that empowers generations of young people in Bukomero.</p>
     <div class="vision-list">
       <div class="vision-item">
-        <div class="vision-number">1</div>
+        <div class="vision-number">✓</div>
         <div class="vision-text">
-          <h4>Expand the teaching team</h4>
-          <p>Employ one additional male craft teacher to hold weekly workshops alongside the existing two female teachers.</p>
+          <h4>Build a computer lab — achieved July 2026</h4>
+          <p>One of our top 2026 goals, done: a fully equipped computer lab is now up and running at Nuri Primary School, teaching the children their first digital skills.</p>
         </div>
       </div>
       <div class="vision-item">
-        <div class="vision-number">2</div>
+        <div class="vision-number">✓</div>
         <div class="vision-text">
-          <h4>Regular volunteer visits</h4>
-          <p>Yearly or semi-annual visits to introduce new projects, provide advanced training and strengthen community bonds.</p>
+          <h4>Introduce sewing machines — achieved July 2026</h4>
+          <p>Alongside hand sewing, students are now learning to use proper sewing machines and repair textiles — another 2026 goal reached during our second intensive course.</p>
         </div>
       </div>
       <div class="vision-item">
         <div class="vision-number">3</div>
         <div class="vision-text">
-          <h4>New courses</h4>
-          <p>Develop sewing, basic carpentry, creative recycling and a Creative Technology Workshop with 3D printing and laser engraving.</p>
+          <h4>Multiple intensive courses every year</h4>
+          <p>Grow from occasional visits to several dedicated project weeks per year with volunteers, so more children can go deeper on technical, textile and future computer skills.</p>
         </div>
       </div>
       <div class="vision-item">
         <div class="vision-number">4</div>
         <div class="vision-text">
           <h4>Build partnerships & sponsorships</h4>
-          <p>Find sponsors to support teacher salaries, materials and maintenance — making the program financially sustainable.</p>
+          <p>Good progress already: most of our local trainers have been added to HFAAC's official payroll, sponsored by HFAAC's Brian and Brad — a big step toward making the program financially sustainable for the long run.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- DONATE -->
 <section id="donate">
   <div class="section-label" style="color: rgba(255,255,255,0.7);">Make a Difference</div>
   <h2>Support Crafting Futures</h2>
   <p>Every contribution helps us buy materials, support local teacher salaries and keep the workshops running. No donation is too small — every euro makes a real impact in Bukomero.</p>
+  <div class="help-grid">
+    <a class="help-card" href="mailto:info@craftingfutures.at?subject=I%20want%20to%20volunteer%20in%20Uganda">
+      <div class="help-icon">✈️</div>
+      <h4>Volunteer</h4>
+      <p>Come to Uganda, bring your skills and meet great people.</p>
+    </a>
+    <a class="help-card" href="#hfaac">
+      <div class="help-icon">💶</div>
+      <h4>Donate</h4>
+      <p>Every cent counts and flows directly into the project.</p>
+    </a>
+    <a class="help-card" href="mailto:info@craftingfutures.at?subject=I%20have%20ideas%20or%20talents%20to%20offer">
+      <div class="help-icon">💡</div>
+      <h4>Ideas & talents</h4>
+      <p>Help with fundraising, social media, texts and reports.</p>
+    </a>
+    <a class="help-card" href="mailto:info@craftingfutures.at?subject=I%20want%20to%20teach%20an%20online%20course">
+      <div class="help-icon">💻</div>
+      <h4>Online courses</h4>
+      <p>Teach computer skills remotely to our students.</p>
+    </a>
+    <a class="help-card" href="mailto:?subject=Check%20out%20Crafting%20Futures&body=I%20wanted%20to%20share%20this%20project%20with%20you%3A%20Crafting%20Futures%20in%20Bukomero%2C%20Uganda.">
+      <div class="help-icon">📣</div>
+      <h4>Spread the word</h4>
+      <p>Tell your friends and family about Crafting Futures.</p>
+    </a>
+  </div>
   <div class="donate-options">
     <a href="mailto:info@craftingfutures.at" class="donate-btn">✉ Get in Touch</a>
     <a href="#hfaac" class="donate-btn">🌍 Donate via HFAAC</a>
   </div>
   <p class="donate-note">All donations go directly to the project. We are 100% volunteer-run.</p>
 </section>
-
 <!-- HFAAC -->
 <section id="hfaac">
-  <div class="hfaac-inner">
-    <div class="section-label">Our Partner</div>
-    <div class="hfaac-logo-box">🤝</div>
-    <h2>Hands for an African Child</h2>
-    <p>Crafting Futures operates in close partnership with <strong>Hands for an African Child (HFAAC)</strong> in Bukomero, Uganda. HFAAC provides the infrastructure, community connections and local support that make our work possible. Together we are stronger.</p>
-    <a href="https://www.hfaac.at" target="_blank" class="hfaac-link">Visit HFAAC Bukomero →</a>
+  <div class="hfaac-grid">
+    <button class="hfaac-image zoomable" data-img="images/hfaac.jpg" aria-label="Enlarge photo"></button>
+    <div class="hfaac-inner">
+      <div class="section-label">Our Partner</div>
+      <h2>Hands for an African Child</h2>
+      <p>Crafting Futures operates in close partnership with <strong>Hands for an African Child (HFAAC)</strong> — a children's village for orphans in Bukomero, Uganda, built up since 2022. HFAAC provides the infrastructure, community connections and local support that make our work possible.</p>
+      <ul class="hfaac-facts">
+        <li>12 families care for up to 16 orphaned children each, giving them a stable home with their basic needs covered</li>
+        <li>Its own school on the grounds — Nuri Primary School</li>
+        <li>A large, self-run farm that helps finance the village</li>
+        <li>Founded by Americans Brian Matthews and Brad Andersen, but locally led and run, financed through donations and agriculture</li>
+      </ul>
+      <a href="https://www.handsforanafricanchild.org" target="_blank" rel="noopener" class="hfaac-link">Visit HFAAC Bukomero →</a>
+    </div>
   </div>
 </section>
-
 <!-- FOOTER -->
 <footer>
   <strong>Crafting Futures</strong> · Bukomero, Uganda
-  <p>© 2026 Crafting Futures · A volunteer initiative by Marcella Lex, Andreas & Anne Suppersberger · Austria</p>
+  <p>© 2026 Crafting Futures · A volunteer initiative by Marcella L., Andreas S. & Anne S. · Austria</p>
 </footer>
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="detail-modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <h3 id="modal-title"></h3>
+    <p id="modal-text"></p>
+  </div>
+</div>
+<!-- TEAM PHOTO MODAL -->
+<div class="modal-overlay" id="photo-modal">
+  <div class="modal-box photo-modal-box">
+    <button class="modal-close" id="photo-modal-close" aria-label="Close">&times;</button>
+    <img src="images/team.jpg" alt="" id="photo-modal-img" />
+  </div>
+</div>
+<script>
+  var modal = document.getElementById('detail-modal');
+  var modalTitle = document.getElementById('modal-title');
+  var modalText = document.getElementById('modal-text');
 
+  document.querySelectorAll('.workshop-tag').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      modalTitle.textContent = btn.textContent.trim();
+      modalText.textContent = btn.getAttribute('data-detail');
+      modal.classList.add('open');
+    });
+  });
+
+  function closeModal() { modal.classList.remove('open'); }
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+
+  var photoModal = document.getElementById('photo-modal');
+  var photoModalImg = document.getElementById('photo-modal-img');
+  function openPhotoModal(src) {
+    photoModalImg.src = src;
+    photoModal.classList.add('open');
+  }
+  document.getElementById('team-photo-trigger').addEventListener('click', function () {
+    openPhotoModal('images/team.jpg');
+  });
+  document.querySelectorAll('.zoomable').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      openPhotoModal(btn.getAttribute('data-img'));
+    });
+  });
+  function closePhotoModal() { photoModal.classList.remove('open'); }
+  document.getElementById('photo-modal-close').addEventListener('click', closePhotoModal);
+  photoModal.addEventListener('click', function (e) { if (e.target === photoModal) closePhotoModal(); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeModal(); closePhotoModal(); }
+  });
+</script>
 </body>
 </html>
