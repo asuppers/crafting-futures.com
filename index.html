@@ -230,9 +230,15 @@
     background: white; color: var(--orange); padding: 16px 36px;
     border-radius: 999px; text-decoration: none; font-family: Arial, sans-serif;
     font-weight: bold; font-size: 1rem; transition: all 0.2s;
+    border: none; cursor: pointer;
   }
   .donate-btn:hover { background: var(--brown); color: white; }
   .donate-note { font-size: 0.85rem; opacity: 0.8; font-family: Arial, sans-serif; }
+  .bank-details { display: flex; flex-direction: column; gap: 14px; margin: 18px 0 20px; text-align: left; }
+  .bank-row { display: flex; flex-direction: column; gap: 2px; font-family: Arial, sans-serif; }
+  .bank-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--orange); }
+  .bank-value { font-size: 0.95rem; color: var(--brown); font-weight: bold; }
+  .bank-note { font-size: 0.85rem; color: var(--text-light); font-family: Arial, sans-serif; }
   .help-grid {
     display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
     max-width: 1100px; margin: 0 auto 48px;
@@ -278,8 +284,11 @@
   }
   footer p { color: var(--text-light); margin-top: 8px; }
   @media (max-width: 768px) {
-    nav { padding: 0 20px; }
+    nav { padding: 0 16px; height: 64px; }
     .nav-links { display: none; }
+    .nav-logo { gap: 8px; font-size: 1.05rem; }
+    .nav-logo img { height: 40px; }
+    .nav-donate { padding: 8px 16px; font-size: 0.75rem; }
     section { padding: 60px 20px; }
     .about-grid { grid-template-columns: 1fr; }
     .project-card { grid-template-columns: 1fr !important; }
@@ -536,6 +545,7 @@
   <div class="donate-options">
     <a href="mailto:info@craftingfutures.at" class="donate-btn">✉ Get in Touch</a>
     <a href="#hfaac" class="donate-btn">🌍 Donate via HFAAC</a>
+    <button class="donate-btn" id="bank-transfer-btn">🏦 Bank Transfer</button>
   </div>
   <p class="donate-note">All donations go directly to the project. We are 100% volunteer-run.</p>
 </section>
@@ -577,6 +587,32 @@
     <img src="images/team.jpg" alt="" id="photo-modal-img" />
   </div>
 </div>
+<!-- BANK TRANSFER MODAL -->
+<div class="modal-overlay" id="bank-modal">
+  <div class="modal-box">
+    <button class="modal-close" id="bank-modal-close" aria-label="Close">&times;</button>
+    <h3>Bank Transfer Details</h3>
+    <div class="bank-details">
+      <div class="bank-row">
+        <span class="bank-label">Beneficiary</span>
+        <span class="bank-value">Andreas Suppersberger & Marcella Lex</span>
+      </div>
+      <div class="bank-row">
+        <span class="bank-label">IBAN</span>
+        <span class="bank-value">LT50 3250 0602 4737 9236</span>
+      </div>
+      <div class="bank-row">
+        <span class="bank-label">BIC / SWIFT</span>
+        <span class="bank-value">REVOLT21</span>
+      </div>
+      <div class="bank-row">
+        <span class="bank-label">Bank name & address</span>
+        <span class="bank-value">Revolut Bank UAB, Konstitucijos ave. 21B, 08130, Vilnius, Lithuania</span>
+      </div>
+    </div>
+    <p class="bank-note">100% of your transfer goes directly to the project.</p>
+  </div>
+</div>
 <script>
   var modal = document.getElementById('detail-modal');
   var modalTitle = document.getElementById('modal-title');
@@ -612,8 +648,16 @@
   document.getElementById('photo-modal-close').addEventListener('click', closePhotoModal);
   photoModal.addEventListener('click', function (e) { if (e.target === photoModal) closePhotoModal(); });
 
+  var bankModal = document.getElementById('bank-modal');
+  document.getElementById('bank-transfer-btn').addEventListener('click', function () {
+    bankModal.classList.add('open');
+  });
+  function closeBankModal() { bankModal.classList.remove('open'); }
+  document.getElementById('bank-modal-close').addEventListener('click', closeBankModal);
+  bankModal.addEventListener('click', function (e) { if (e.target === bankModal) closeBankModal(); });
+
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') { closeModal(); closePhotoModal(); }
+    if (e.key === 'Escape') { closeModal(); closePhotoModal(); closeBankModal(); }
   });
 </script>
 </body>
