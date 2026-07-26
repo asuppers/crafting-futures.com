@@ -162,6 +162,9 @@
   .modal-close:hover { color: var(--brown); }
   .modal-box h3 { color: var(--brown); font-size: 1.3rem; margin-bottom: 14px; padding-right: 20px; }
   .modal-box p { color: var(--text-light); font-family: Arial, sans-serif; font-size: 0.95rem; line-height: 1.7; }
+  .modal-images { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .modal-images img { width: calc(25% - 8px); border-radius: 0.75rem; object-fit: cover; aspect-ratio: 1; cursor: pointer; transition: opacity 0.2s; }
+  .modal-images img:hover { opacity: 0.85; }
   .project-card.upcoming { background: white; border: 2px dashed var(--green); }
   .upcoming-tag {
     display: inline-block; background: var(--green); color: white;
@@ -416,12 +419,13 @@
         <h3>Project 2 – Building on What We Started</h3>
         <p>Back in Bukomero for our second intensive course! This visit we tackle two of our big 2026 goals at once: setting up a computer lab and introducing sewing machines — alongside advanced woodworking and crochet. Our local team grows to seven trainers: three in computer skills, one in machine sewing, one in motorbike riding & maintenance, and two continuing in crocheting and handcrafts. Tap any workshop below for details.</p>
         <div class="workshop-list">
-          <button class="workshop-tag" data-detail="Building on 2025's basics, students tackle more complex wood projects — refining measuring, sawing and finishing skills with the existing hand tools.">🪵 Advanced Woodworking</button>
-          <button class="workshop-tag" data-detail="Esther and Filder take returning students further into stramin crochet, bag appliqués and freeform pieces, building on the techniques learned in November 2025.">🧶 Advanced Crochet</button>
-          <button class="workshop-tag" data-detail="Several sewing machines were brought in, moving beyond hand sewing. One local trainer now teaches machine sewing every week.">🪡 Sewing Machines</button>
-          <button class="workshop-tag" data-detail="A new computer lab was set up with modern hardware — HP EliteBook laptops, Dell monitors, a networked printer and WiFi — and three local trainers were hired to teach computer skills.">💻 Computer Lab</button>
-          <button class="workshop-tag" data-detail="A motorbike was purchased for the program, and one local trainer now teaches riding and basic maintenance.">🏍️ Motorbike Riding & Maintenance</button>
-          <button class="workshop-tag" data-detail="Our growing local team of seven trainers gets continued coaching and support to keep the program running week to week, term after term.">👩‍🏫 Teacher Development</button>
+          <button class="workshop-tag" data-detail="Building on 2025's basics, students tackle more complex wood projects — refining measuring, sawing and finishing skills with the existing hand tools." data-images="images/woodworking-1.jpg,images/woodworking-2.jpg">🪵 Advanced Woodworking</button>
+          <button class="workshop-tag" data-detail="Led by Anne and Audrey, students built on their existing skills with more advanced stitches and patterns — making bags, jewelry, toys and clothing. Materials were partly sourced through a Relief Society service project collecting yarn and fabric back home. A few examples of what can be made, plus photos from on-site sessions:" data-images="images/crochet-example-doily.jpg,images/crochet-example-earrings.jpg,images/crochet-example-hat.jpg,images/crochet-example-bunny.jpg,images/crochet-real-1.jpg,images/crochet-real-2.jpg">🧶 Advanced Crochet</button>
+          <button class="workshop-tag" data-detail="Astrid — an experienced seamstress — together with Anne and Marcella taught machine sewing for the very first time at HFAAC, focused on reusable menstrual pads and many, many skirts. Teachers Esther and Filder are being trained as local supervisors to keep the lessons running in regular crafting classes." data-images="images/sewing-machine-1.jpg">🪡 Sewing Machines</button>
+          <button class="workshop-tag" data-detail="Alongside the machines, we also covered hand sewing techniques — going beyond the original plan to make sure students have both skills, whether or not a machine is free." data-images="images/handsewing-1.jpg,images/handsewing-2.jpg">🧵 Hand Sewing</button>
+          <button class="workshop-tag" data-detail="Led by Andy, Heinz and Jari, the lab was set up with four laptops, a laser printer and a SIM-based internet hub, teaching basic computer use, word processing, spreadsheets, presentations and internet safety. Three local trainers are being prepared to teach independently, with an eye toward ICDL-equivalent certification down the line." data-images="images/computerlab-1.jpg,images/computerlab-2.jpg">💻 Computer Lab</button>
+          <button class="workshop-tag" data-detail="Led by Jari together with local trainer Philip, students learned safe Boda Boda handling, basic driving practice, road safety and simple maintenance like tyre and oil checks. Philip now continues as the local trainer and caretaker of the motorbike." data-images="images/motorbike-briefing.jpg,images/motorbike-ride.jpg">🏍️ Motorbike Riding & Maintenance</button>
+          <button class="workshop-tag" data-detail="Our growing local team of seven trainers — including Esther, Filder, Philip and the new computer trainers — gets continued coaching and support to keep the program running week to week, term after term.">👩‍🏫 Teacher Development</button>
         </div>
       </div>
     </div>
@@ -578,6 +582,7 @@
     <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
     <h3 id="modal-title"></h3>
     <p id="modal-text"></p>
+    <div class="modal-images" id="modal-images"></div>
   </div>
 </div>
 <!-- TEAM PHOTO MODAL -->
@@ -618,10 +623,22 @@
   var modalTitle = document.getElementById('modal-title');
   var modalText = document.getElementById('modal-text');
 
+  var modalImages = document.getElementById('modal-images');
   document.querySelectorAll('.workshop-tag').forEach(function (btn) {
     btn.addEventListener('click', function () {
       modalTitle.textContent = btn.textContent.trim();
       modalText.textContent = btn.getAttribute('data-detail');
+      modalImages.innerHTML = '';
+      var imgs = btn.getAttribute('data-images');
+      if (imgs) {
+        imgs.split(',').forEach(function (src) {
+          var img = document.createElement('img');
+          img.src = src;
+          img.alt = '';
+          img.addEventListener('click', function () { openPhotoModal(src); });
+          modalImages.appendChild(img);
+        });
+      }
       modal.classList.add('open');
     });
   });
