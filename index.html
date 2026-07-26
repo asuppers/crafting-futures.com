@@ -47,14 +47,15 @@
     text-align: center; color: var(--brown); position: relative; overflow: hidden;
     background: var(--beige);
   }
-  .hero-overlay {
-    position: absolute; inset: 0;
-    background: url('images/hero.jpg') center/cover no-repeat;
-    opacity: 0.55;
+  .hero-slideshow { position: absolute; inset: 0; }
+  .hero-slide {
+    position: absolute; inset: 0; background-size: cover; background-position: center;
+    opacity: 0; transition: opacity 1.8s ease-in-out;
   }
+  .hero-slide.active { opacity: 0.92; }
   .hero::after {
     content: ''; position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(246,244,236,0.55) 0%, rgba(246,244,236,0.85) 100%);
+    background: linear-gradient(180deg, rgba(246,244,236,0.15) 0%, rgba(246,244,236,0.75) 100%);
   }
   .hero-content { position: relative; z-index: 1; padding: 0 20px; }
   .hero-tag {
@@ -115,7 +116,7 @@
   .photo-modal-box img { width: 100%; border-radius: 1rem; display: block; }
   .photo-modal-box .modal-close { top: 22px; right: 22px; background: rgba(255,255,255,0.9); border-radius: 50%; width: 32px; height: 32px; }
   /* PROJECTS */
-  #projects { background: white; }
+  #programs { background: white; }
   .projects-inner { max-width: 1100px; margin: 0 auto; }
   .projects-header { text-align: center; margin-bottom: 60px; }
   .projects-header .section-intro { margin: 0 auto; }
@@ -172,6 +173,22 @@
     text-transform: uppercase; letter-spacing: 0.12em;
     font-family: Arial, sans-serif; font-weight: bold; margin-bottom: 10px;
   }
+  /* PROGRAMS (centers) */
+  .program-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 20px; }
+  .program-card { background: var(--beige); border-radius: 2rem; overflow: hidden; box-shadow: 0 10px 30px rgba(27,42,74,0.08); }
+  .program-photo {
+    height: 220px; background: center/cover no-repeat; display: block; width: 100%;
+    border: none; padding: 0; cursor: pointer; transition: opacity 0.2s;
+  }
+  .program-photo:hover { opacity: 0.88; }
+  .program-body { padding: 28px 32px 32px; }
+  .program-body h3 { font-size: 1.35rem; color: var(--brown); margin-bottom: 6px; }
+  .program-trainer {
+    font-family: Arial, sans-serif; font-size: 0.78rem; color: var(--orange);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; font-weight: bold;
+  }
+  .program-body p { color: var(--text-light); line-height: 1.7; margin-bottom: 14px; font-size: 0.95rem; }
+  .whats-next-label { text-align: center; margin: 64px 0 24px; }
   /* MILESTONES (2025 timeline) */
   .milestones-label { text-align: center; margin-bottom: 24px; }
   .milestone-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 56px; }
@@ -298,6 +315,7 @@
     .project-card:nth-child(even) .project-img { order: 1; }
     .project-card:nth-child(even) .project-content { order: 2; }
     .impact-grid { grid-template-columns: repeat(2, 1fr); }
+    .program-grid { grid-template-columns: 1fr; }
     .hfaac-grid { grid-template-columns: 1fr; }
     .milestone-item { flex-direction: column; align-items: flex-start; }
     .milestone-img { width: 100%; height: 160px; }
@@ -311,22 +329,30 @@
   <a href="#" class="nav-logo"><img src="images/logo-icon.png" alt="Crafting Futures logo" />Crafting <span>Futures</span></a>
   <ul class="nav-links">
     <li><a href="#about">Who We Are</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#train-the-trainer">Trainers</a></li>
     <li><a href="#impact">Impact</a></li>
-    <li><a href="#vision">Vision</a></li>
     <li><a href="#hfaac">HFAAC</a></li>
   </ul>
   <a href="#donate" class="nav-donate">❤ Donate</a>
 </nav>
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-overlay"></div>
+  <div class="hero-slideshow" id="hero-slideshow">
+    <div class="hero-slide active" style="background-image: url('images/hero.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/project3.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/project2.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/project1.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/crochet-real-1.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/motorbike-ride.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/team.jpg');"></div>
+  </div>
   <div class="hero-content">
     <div class="hero-tag">Uganda · Bukomero · Since 2025</div>
     <h1>Crafting <span>Futures</span></h1>
     <p>Empowering children, teachers and mothers in Uganda through creativity, craftsmanship and practical skills.</p>
     <div class="hero-buttons">
-      <a href="#projects" class="btn-primary">Our Projects</a>
+      <a href="#programs" class="btn-primary">Our Programs</a>
       <a href="#donate" class="btn-outline">Support Us</a>
     </div>
   </div>
@@ -339,7 +365,7 @@
       <div class="section-label">Who We Are</div>
       <h2>A small team with a big heart</h2>
       <p>After a private visit to the children's home with her family in the summer of 2024, Marcella L. had an idea: to open up space for creative thinking and hands-on making. Andreas S. and Anne S. later joined her — together we believe that creativity and practical skills can transform lives. In partnership with <strong>Hands for an African Child (HFAAC)</strong> in Bukomero, Uganda, we run hands-on crafting and skills programs first and foremost for the orphaned children of HFAAC — while their teachers and parents grow right alongside them, learning new skills of their own along the way.</p>
-      <p>Our first volunteers, Hannah and Emily, arrived in February 2025 and spent six weeks laying the groundwork. Since then, 15 volunteers have taught on-site for a combined ten weeks, and we've helped hire and train seven local trainers — three in computer skills, two in crocheting and handcrafts, one in machine sewing, and one in motorbike riding & maintenance — who now teach every week during term time. We're already back for our second intensive course in July 2026.</p>
+      <p>Our first volunteers arrived in February 2025. Since then, 15 volunteers have taught on-site for a combined ten weeks, and we've helped hire and train seven local trainers who now run five ongoing programs every week during term time — computer skills, tailoring, carpentry, crafting classes and motorbike riding & maintenance. We're already back for our second intensive course in July 2026.</p>
       <p>We are not a large NGO. We are people who show up, roll up their sleeves and craft something meaningful — together with the community.</p>
       <div class="team-list">
         <button class="team-member team-member-combined" id="team-photo-trigger">
@@ -351,17 +377,65 @@
     </div>
   </div>
 </section>
-<!-- PROJECTS -->
-<section id="projects">
+<!-- PROGRAMS -->
+<section id="programs">
   <div class="projects-inner">
     <div class="projects-header">
-      <div class="section-label">Our Projects</div>
-      <h2>From idea to reality</h2>
-      <p class="section-intro">Each visit brings new workshops, new skills and new friendships. Here is how 2025 unfolded, week by week — and where we are now.</p>
+      <div class="section-label">What We've Built</div>
+      <h2>Five programs, running every week</h2>
+      <p class="section-intro">What started as short volunteer visits has grown into five ongoing programs at Nuri Primary School — each one now carried forward by a local trainer, week after week, term after term.</p>
     </div>
 
-    <div class="milestones-label">
-      <div class="section-label">2025 Timeline</div>
+    <div class="program-grid">
+      <div class="program-card">
+        <button class="program-photo zoomable" data-img="images/project3.jpg" style="background-image: url('images/project3.jpg');" aria-label="Enlarge photo"></button>
+        <div class="program-body">
+          <h3>💻 Computer Lab</h3>
+          <div class="program-trainer">3 local trainers in training</div>
+          <p>Four laptops, a laser printer and a SIM-based internet hub — set up by Andy, Heinz and Jari, now being run week to week by three local trainers preparing for ICDL-equivalent certification. Children learn word processing, spreadsheets, presentations and internet safety.</p>
+          <button class="workshop-tag" data-detail="Four laptops, a laser printer and a SIM-based internet hub, teaching basic computer use, word processing, spreadsheets, presentations and internet safety. Three local trainers are being prepared to teach independently, with an eye toward ICDL-equivalent certification down the line." data-images="images/computerlab-1.jpg,images/computerlab-2.jpg">📷 More photos</button>
+        </div>
+      </div>
+      <div class="program-card">
+        <button class="program-photo zoomable" data-img="images/project2.jpg" style="background-image: url('images/project2.jpg');" aria-label="Enlarge photo"></button>
+        <div class="program-body">
+          <h3>🪡 Tailoring Workshop</h3>
+          <div class="program-trainer">Esther & Filder · training as supervisors</div>
+          <p>Sewing machines arrived at HFAAC for the first time in 2026, brought and taught by Astrid, an experienced seamstress — students make reusable menstrual pads and skirts. Hand sewing is taught alongside, so there's always a way to sew, machine or not.</p>
+          <button class="workshop-tag" data-detail="Astrid — an experienced seamstress — together with Anne and Marcella taught machine sewing for the very first time at HFAAC, focused on reusable menstrual pads and many, many skirts. Alongside the machines, hand sewing techniques are also taught, so students have both skills whether or not a machine is free. Teachers Esther and Filder are being trained as local supervisors to keep the lessons running." data-images="images/sewing-machine-1.jpg,images/handsewing-1.jpg,images/handsewing-2.jpg">📷 More photos</button>
+        </div>
+      </div>
+      <div class="program-card">
+        <button class="program-photo zoomable" data-img="images/project1.jpg" style="background-image: url('images/project1.jpg');" aria-label="Enlarge photo"></button>
+        <div class="program-body">
+          <h3>🪵 Carpentry Course</h3>
+          <div class="program-trainer">Patrick · foster father & woodworker</div>
+          <p>Using a mitre box saw, jigsaw, drill and pyrography pen, students measure, saw, sand and decorate their own wood pieces — Mölkky games, keychains, cutting boards and ABC learning blocks. Patrick, a foster father at HFAAC with a natural talent for woodwork, has led every session since 2025.</p>
+          <button class="workshop-tag" data-detail="Building on 2025's basics — Mölkky games, keychains, cutting boards and ABC learning blocks — students tackle more complex wood projects with a manual mitre box saw, cordless jigsaw, drill and pyrography pen, refining measuring, sawing and finishing skills." data-images="images/woodworking-1.jpg,images/woodworking-2.jpg">📷 More photos</button>
+        </div>
+      </div>
+      <div class="program-card">
+        <button class="program-photo zoomable" data-img="images/crochet-real-1.jpg" style="background-image: url('images/crochet-real-1.jpg');" aria-label="Enlarge photo"></button>
+        <div class="program-body">
+          <h3>🧶 Crafting Classes</h3>
+          <div class="program-trainer">Esther & Filder · crochet & handcrafts</div>
+          <p>Regular crafting classes run right in school — door mats, felt crowns, handmade dolls, bags, jewelry, toys and clothing — combining crochet and hand sewing. Anne and Audrey introduced more advanced stitches and patterns in 2026, building on what Esther and Filder already teach every week.</p>
+          <button class="workshop-tag" data-detail="Led by Anne and Audrey, students built on their existing skills with more advanced stitches and patterns — making bags, jewelry, toys and clothing. Materials were partly sourced through a Relief Society service project collecting yarn and fabric back home. A few examples of what can be made, plus photos from on-site sessions:" data-images="images/crochet-example-doily.jpg,images/crochet-example-earrings.jpg,images/crochet-example-hat.jpg,images/crochet-example-bunny.jpg,images/crochet-real-1.jpg,images/crochet-real-2.jpg">📷 More photos</button>
+        </div>
+      </div>
+      <div class="program-card">
+        <button class="program-photo zoomable" data-img="images/motorbike-ride.jpg" style="background-image: url('images/motorbike-ride.jpg');" aria-label="Enlarge photo"></button>
+        <div class="program-body">
+          <h3>🏍️ Motorbike Riding & Maintenance</h3>
+          <div class="program-trainer">Philip · local trainer & caretaker</div>
+          <p>Safe Boda Boda handling, basic driving practice, road safety and simple maintenance like tyre and oil checks — led by Jari, and now continued week to week by Philip, our local trainer and caretaker of the motorbike.</p>
+          <button class="workshop-tag" data-detail="Led by Jari together with local trainer Philip, students learned safe Boda Boda handling, basic driving practice, road safety and simple maintenance like tyre and oil checks. Philip now continues as the local trainer and caretaker of the motorbike." data-images="images/motorbike-briefing.jpg">📷 More photos</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestones-label" style="margin-top: 64px;">
+      <div class="section-label">How It Started</div>
     </div>
     <div class="milestone-list">
       <div class="milestone-item">
@@ -390,52 +464,15 @@
       </div>
     </div>
 
-    <!-- PROJECT 1 -->
-    <div class="project-card">
-      <button class="project-img zoomable" data-img="images/project1.jpg" style="background-image: url('images/project1.jpg');" aria-label="Enlarge photo"></button>
-      <div class="project-content">
-        <div class="project-date">📅 31 October – 13 November 2025 · HFAAC Bukomero</div>
-        <h3>Project 1 – Volunteer Skills Program</h3>
-        <p>Marcella L., Andreas S. and Anne S. spend two weeks on-site leading the first dedicated project week — around 40 children work in depth on technical and textile skills. Teachers Esther and Filder help lead the handcrafting sessions, and Patrick, a foster father at HFAAC with a natural talent for woodwork, joins as our third local craft teacher. Every goal we set out with was achieved — and all three have kept the program running every week since we left in November 2025.</p>
-        <div class="workshop-list">
-          <button class="workshop-tag" data-detail="All students learned how to measure, saw, sand, oil and decorate wooden pieces using a manual mitre box saw and a pyrography pen. Two full sets of a Mölkky game were produced and played, and a template set was left with the school.">🪵 Wood Crafting (Mölkky Game)</button>
-          <button class="workshop-tag" data-detail="Small wooden keychains were produced using a cordless jigsaw, pyrography pen and cordless drill — training measuring, creativity and cutting skills.">🔑 Wooden Keychains</button>
-          <button class="workshop-tag" data-detail="Students created wooden cutting boards with a fretsaw, cordless jigsaw and pyrography pen, applying measurement techniques, safe cutting and creative decoration.">✂️ Cutting Boards</button>
-          <button class="workshop-tag" data-detail="Children independently produced ABC and number learning blocks for the school using a manual mitre box saw and pyrography pen, fostering initiative, problem-solving and collaboration.">🔤 Learning Blocks (ABC & Numbers)</button>
-          <button class="workshop-tag" data-detail="Participants crocheted bag appliqués and sewed them onto bags, learning basic crocheting and hand sewing skills.">🧶 Crochet & Fabric</button>
-          <button class="workshop-tag" data-detail="Handmade dolls were stuffed and decorated by hand, strengthening fine motor control, patience and artistic development.">🧸 Handmade Dolls</button>
-          <button class="workshop-tag" data-detail="Door mats were crocheted with children and adults — showing that simple crochet techniques can create beautiful, useful everyday items.">🪢 Door Mats</button>
-          <button class="workshop-tag" data-detail="Felt crowns were sewn and designed using templates, teaching hand sewing skills, motif design and creativity.">👑 Felt Crowns</button>
-          <button class="workshop-tag" data-detail="Teachers Esther and Filder helped lead the handcrafting sessions, and Patrick — a foster father at HFAAC with a natural talent for woodwork — joined as our third local craft teacher. All three have kept teaching every week since November 2025.">👩‍🏫 Teacher Training</button>
-          <button class="workshop-tag" data-detail="Mothers were taught crocheting and knitting techniques with hooks, needles and wool — building sustainability and local empowerment.">👩 Mothers Training</button>
-        </div>
-      </div>
+    <div class="whats-next-label">
+      <div class="section-label">What's Next</div>
     </div>
-    <!-- PROJECT 2 -->
-    <div class="project-card">
-      <button class="project-img zoomable" data-img="images/project2.jpg" style="background-image: url('images/project2.jpg');" aria-label="Enlarge photo"></button>
-      <div class="project-content">
-        <div class="project-date">📅 4 – 19 July 2026 · HFAAC Bukomero</div>
-        <h3>Project 2 – Building on What We Started</h3>
-        <p>Back in Bukomero for our second intensive course! This visit we tackle two of our big 2026 goals at once: setting up a computer lab and introducing sewing machines — alongside advanced woodworking and crochet. Our local team grows to seven trainers: three in computer skills, one in machine sewing, one in motorbike riding & maintenance, and two continuing in crocheting and handcrafts. Tap any workshop below for details.</p>
-        <div class="workshop-list">
-          <button class="workshop-tag" data-detail="Building on 2025's basics, students tackle more complex wood projects — refining measuring, sawing and finishing skills with the existing hand tools." data-images="images/woodworking-1.jpg,images/woodworking-2.jpg">🪵 Advanced Woodworking</button>
-          <button class="workshop-tag" data-detail="Led by Anne and Audrey, students built on their existing skills with more advanced stitches and patterns — making bags, jewelry, toys and clothing. Materials were partly sourced through a Relief Society service project collecting yarn and fabric back home. A few examples of what can be made, plus photos from on-site sessions:" data-images="images/crochet-example-doily.jpg,images/crochet-example-earrings.jpg,images/crochet-example-hat.jpg,images/crochet-example-bunny.jpg,images/crochet-real-1.jpg,images/crochet-real-2.jpg">🧶 Advanced Crochet</button>
-          <button class="workshop-tag" data-detail="Astrid — an experienced seamstress — together with Anne and Marcella taught machine sewing for the very first time at HFAAC, focused on reusable menstrual pads and many, many skirts. Teachers Esther and Filder are being trained as local supervisors to keep the lessons running in regular crafting classes." data-images="images/sewing-machine-1.jpg">🪡 Sewing Machines</button>
-          <button class="workshop-tag" data-detail="Alongside the machines, we also covered hand sewing techniques — going beyond the original plan to make sure students have both skills, whether or not a machine is free." data-images="images/handsewing-1.jpg,images/handsewing-2.jpg">🧵 Hand Sewing</button>
-          <button class="workshop-tag" data-detail="Led by Andy, Heinz and Jari, the lab was set up with four laptops, a laser printer and a SIM-based internet hub, teaching basic computer use, word processing, spreadsheets, presentations and internet safety. Three local trainers are being prepared to teach independently, with an eye toward ICDL-equivalent certification down the line." data-images="images/computerlab-1.jpg,images/computerlab-2.jpg">💻 Computer Lab</button>
-          <button class="workshop-tag" data-detail="Led by Jari together with local trainer Philip, students learned safe Boda Boda handling, basic driving practice, road safety and simple maintenance like tyre and oil checks. Philip now continues as the local trainer and caretaker of the motorbike." data-images="images/motorbike-briefing.jpg,images/motorbike-ride.jpg">🏍️ Motorbike Riding & Maintenance</button>
-          <button class="workshop-tag" data-detail="Our growing local team of seven trainers — including Esther, Filder, Philip and the new computer trainers — gets continued coaching and support to keep the program running week to week, term after term.">👩‍🏫 Teacher Development</button>
-        </div>
-      </div>
-    </div>
-    <!-- PROJECT 3 (UPCOMING) -->
     <div class="project-card upcoming">
-      <button class="project-img zoomable" data-img="images/project3.jpg" style="background-image: url('images/project3.jpg');" aria-label="Enlarge photo"></button>
+      <button class="project-img zoomable" data-img="images/hfaac.jpg" style="background-image: url('images/hfaac.jpg');" aria-label="Enlarge photo"></button>
       <div class="project-content">
         <span class="upcoming-tag">🔜 Next Up</span>
         <div class="project-date">📅 Coming soon · HFAAC Bukomero</div>
-        <h3>Project 3 – Connecting HFAAC</h3>
+        <h3>Connecting HFAAC</h3>
         <p>Our next project is already in the pipeline: bringing internet to the entire HFAAC compound — from the medical center and community building to the teacher homes, office buildings and all the way up to the family homes. We'll start with a microwave data link over a fibre (glasfibre) connection with WiFi access points across the site, and switch to Starlink once it becomes available in the area.</p>
         <p style="font-size: 0.9rem; color: var(--text-light);">A huge thank you to <strong>Terry</strong> from the US, who is generously supporting this project — and who will help bring Starlink to HFAAC once it's available in the area.</p>
         <div class="workshop-list">
@@ -448,6 +485,45 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+<!-- TRAIN THE TRAINER -->
+<section id="train-the-trainer" style="background: var(--beige);">
+  <div class="vision-inner">
+    <div class="section-label">How We Work</div>
+    <h2>Train the trainer</h2>
+    <p class="section-intro">We don't fly in to teach a one-off workshop and leave. Every program is built so a local trainer can carry it forward alone — teaching every week during term time, long after we've gone home.</p>
+    <div class="vision-list">
+      <div class="vision-item">
+        <div class="vision-number">👩‍🏫</div>
+        <div class="vision-text">
+          <h4>Esther & Filder — Crafting Classes & Tailoring</h4>
+          <p>Our first local teachers, joined in May and July 2025. They lead crochet and handcraft lessons every week, and are now also training as sewing machine supervisors.</p>
+        </div>
+      </div>
+      <div class="vision-item">
+        <div class="vision-number">🪵</div>
+        <div class="vision-text">
+          <h4>Patrick — Carpentry Course</h4>
+          <p>A foster father at HFAAC with a natural talent for woodwork, Patrick joined as our third local craft teacher in 2025 and has run the carpentry course every week since.</p>
+        </div>
+      </div>
+      <div class="vision-item">
+        <div class="vision-number">🏍️</div>
+        <div class="vision-text">
+          <h4>Philip — Motorbike Riding & Maintenance</h4>
+          <p>Trained by Jari in 2026, Philip now teaches safe riding and basic maintenance independently, and cares for the motorbike day to day.</p>
+        </div>
+      </div>
+      <div class="vision-item">
+        <div class="vision-number">💻</div>
+        <div class="vision-text">
+          <h4>Three Computer Lab trainers</h4>
+          <p>Prepared in 2026 to run the new computer lab independently, with an eye toward ICDL-equivalent certification down the line.</p>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top: 28px; color: var(--text-light); font-family: Arial, sans-serif; font-size: 0.9rem; line-height: 1.7;">Most of our local trainers are already on HFAAC's official payroll, sponsored by Brian and Brad — a big step toward making every program financially sustainable for the long run.</p>
   </div>
 </section>
 <!-- IMPACT -->
@@ -484,28 +560,14 @@
     <p class="section-intro">With continued support, Crafting Futures aims to grow into a self-sustaining craft education centre that empowers generations of young people in Bukomero.</p>
     <div class="vision-list">
       <div class="vision-item">
-        <div class="vision-number">✓</div>
-        <div class="vision-text">
-          <h4>Build a computer lab — achieved July 2026</h4>
-          <p>One of our top 2026 goals, done: a fully equipped computer lab is now up and running at Nuri Primary School, teaching the children their first digital skills.</p>
-        </div>
-      </div>
-      <div class="vision-item">
-        <div class="vision-number">✓</div>
-        <div class="vision-text">
-          <h4>Introduce sewing machines — achieved July 2026</h4>
-          <p>Alongside hand sewing, students are now learning to use proper sewing machines and repair textiles — another 2026 goal reached during our second intensive course.</p>
-        </div>
-      </div>
-      <div class="vision-item">
-        <div class="vision-number">3</div>
+        <div class="vision-number">1</div>
         <div class="vision-text">
           <h4>Multiple intensive courses every year</h4>
           <p>Grow from occasional visits to several dedicated project weeks per year with volunteers, so more children can go deeper on technical, textile and future computer skills.</p>
         </div>
       </div>
       <div class="vision-item">
-        <div class="vision-number">4</div>
+        <div class="vision-number">2</div>
         <div class="vision-text">
           <h4>Build partnerships & sponsorships</h4>
           <p>Good progress already: most of our local trainers have been added to HFAAC's official payroll, sponsored by HFAAC's Brian and Brad — a big step toward making the program financially sustainable for the long run.</p>
@@ -619,6 +681,16 @@
   </div>
 </div>
 <script>
+  var heroSlides = document.querySelectorAll('#hero-slideshow .hero-slide');
+  if (heroSlides.length > 1) {
+    var heroIndex = 0;
+    setInterval(function () {
+      heroSlides[heroIndex].classList.remove('active');
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      heroSlides[heroIndex].classList.add('active');
+    }, 4500);
+  }
+
   var modal = document.getElementById('detail-modal');
   var modalTitle = document.getElementById('modal-title');
   var modalText = document.getElementById('modal-text');
