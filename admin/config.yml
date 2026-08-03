@@ -1,0 +1,203 @@
+backend:
+  name: github
+  repo: asuppers/crafting-futures.com
+  branch: main
+  # After you deploy the Cloudflare Worker (see SETUP.md), replace the URL
+  # below with your worker's URL, e.g. https://cf-oauth.YOURNAME.workers.dev
+  base_url: https://REPLACE-WITH-YOUR-WORKER-URL.workers.dev
+
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  - name: "site"
+    label: "Website Content"
+    files:
+      - name: "content"
+        label: "Page Text & Photos"
+        file: "content/site.json"
+        editor:
+          preview: false
+        fields:
+          - label: "Hero (Top Banner)"
+            name: hero
+            widget: object
+            fields:
+              - { label: "Tag line (small badge)", name: tag, widget: string }
+              - { label: "Subtitle", name: subtitle, widget: text }
+              - { label: "Button 1 text", name: primaryButton, widget: string }
+              - { label: "Button 2 text", name: outlineButton, widget: string }
+              - label: "Slideshow photos"
+                name: slideshowImages
+                widget: list
+                field: { label: "Photo", name: image, widget: image }
+
+          - label: "Who We Are"
+            name: about
+            widget: object
+            fields:
+              - { label: "Small label", name: label, widget: string }
+              - { label: "Heading", name: heading, widget: string }
+              - { label: "Photo", name: image, widget: image }
+              - label: "Paragraphs"
+                name: paragraphs
+                widget: list
+                field: { label: "Paragraph", name: paragraph, widget: text }
+              - { label: "Team names line", name: teamNames, widget: string }
+              - { label: "Team photo (shown when clicked)", name: teamPhoto, widget: image }
+
+          - label: "Programs Section"
+            name: programs
+            widget: object
+            fields:
+              - { label: "Small label", name: label, widget: string }
+              - { label: "Heading", name: heading, widget: string }
+              - { label: "Intro text", name: intro, widget: text }
+              - label: "Programs"
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title (with emoji)", name: title, widget: string }
+                  - { label: "Trainer line", name: trainer, widget: string }
+                  - { label: "Main photo", name: photo, widget: image }
+                  - { label: "Description", name: text, widget: text }
+                  - { label: "Popup detail text", name: detailText, widget: text }
+                  - label: "Gallery photos (More Photos popup)"
+                    name: galleryImages
+                    widget: list
+                    field: { label: "Photo", name: image, widget: image }
+
+          - label: "How It Started (Timeline)"
+            name: milestones
+            widget: object
+            fields:
+              - { label: "Small label", name: label, widget: string }
+              - label: "Milestones"
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Photo", name: image, widget: image }
+                  - { label: "Date", name: date, widget: string }
+                  - { label: "Title", name: title, widget: string }
+                  - { label: "Text", name: text, widget: text }
+
+          - label: "What's Next"
+            name: whatsNext
+            widget: object
+            fields:
+              - { label: "Small label", name: label, widget: string }
+              - { label: "Photo", name: image, widget: image }
+              - { label: "'Upcoming' badge text", name: upcomingTag, widget: string }
+              - { label: "Date label", name: dateLabel, widget: string }
+              - { label: "Heading", name: heading, widget: string }
+              - { label: "Main text", name: paragraph, widget: text }
+              - { label: "Thank-you note (smaller text)", name: thanksNote, widget: text }
+              - label: "Info tags (click to show detail)"
+                name: tags
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Tag label", name: label, widget: string }
+                  - { label: "Popup detail text", name: detail, widget: text }
+
+          - label: "Train the Trainer"
+            name: trainTheTrainer
+            widget: object
+            fields:
+              - { label: "Small label", name: label, widget: string }
+              - { label: "Heading", name: heading, widget: string }
+              - { label: "Intro text", name: intro, widget: text }
+              - label: "Trainers"
+                name: items
+                widget: list
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Emoji", name: emoji, widget: string }
+                  - { label: "Name / role", name: name, widget: string }
+                  - { label: "Text", name: text, widget: text }
+              - { label: "Footer note", name: footerNote, widget: text }
+
+          - label: "Impact Numbers"
+            name: impact
+            widget: object
+            fields:
+              - { label: "Small label", name: label, widget: string }
+              - { label: "Heading", name: heading, widget: string }
+              - { label: "Intro text", name: intro, widget: text }
+              - label: "Stats"
+                name: stats
+                widget: list
+                summary: "{{fields.number}} — {{fields.label}}"
+                fields:
+                  - { label: "Number", name: number, widget: string }
+                  - { label: "Label", name: label, widget: string }
+
+          - label: "Future Vision"
+            name: vision
+            widget: object
+            fields:
+              - { label: "Small label", name: label, widget: string }
+              - { label: "Heading", name: heading, widget: string }
+              - { label: "Intro text", name: intro, widget: text }
+              - label: "Points"
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: title, widget: string }
+                  - { label: "Text", name: text, widget: text }
+
+          - label: "Donate Section"
+            name: donate
+            widget: object
+            fields:
+              - { label: "Small label", name: label, widget: string }
+              - { label: "Heading", name: heading, widget: string }
+              - { label: "Intro text", name: intro, widget: text }
+              - label: "Help cards"
+                name: helpCards
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Icon (emoji)", name: icon, widget: string }
+                  - { label: "Title", name: title, widget: string }
+                  - { label: "Text", name: text, widget: text }
+                  - { label: "Link (mailto: or #section)", name: link, widget: string }
+              - { label: "Contact button text", name: contactButton, widget: string }
+              - { label: "Contact email", name: contactEmail, widget: string }
+              - { label: "HFAAC button text", name: hfaacButton, widget: string }
+              - { label: "Bank transfer button text", name: bankButton, widget: string }
+              - { label: "Note under buttons", name: note, widget: text }
+
+          - label: "HFAAC Partner Section"
+            name: hfaac
+            widget: object
+            fields:
+              - { label: "Small label", name: label, widget: string }
+              - { label: "Heading", name: heading, widget: string }
+              - { label: "Photo", name: image, widget: image }
+              - { label: "Text", name: text, widget: text }
+              - label: "Facts (bullet points)"
+                name: facts
+                widget: list
+                field: { label: "Fact", name: fact, widget: text }
+              - { label: "Link text", name: linkText, widget: string }
+              - { label: "Link URL", name: linkUrl, widget: string }
+
+          - label: "Footer"
+            name: footer
+            widget: object
+            fields:
+              - { label: "Copyright line", name: copyright, widget: string }
+
+          - label: "Bank Transfer Details"
+            name: bank
+            widget: object
+            fields:
+              - { label: "Beneficiary", name: beneficiary, widget: string }
+              - { label: "IBAN", name: iban, widget: string }
+              - { label: "BIC / SWIFT", name: bic, widget: string }
+              - { label: "Bank name & address", name: bankAddress, widget: text }
+              - { label: "Note", name: note, widget: string }

@@ -1,0 +1,190 @@
+{
+  "hero": {
+    "tag": "Uganda · Bukomero · Since 2025",
+    "subtitle": "Empowering children, teachers and mothers in Uganda through creativity, craftsmanship and practical skills.",
+    "primaryButton": "Our Programs",
+    "outlineButton": "Support Us",
+    "slideshowImages": [
+      "images/hero.jpg",
+      "images/project3.jpg",
+      "images/project2.jpg",
+      "images/project1.jpg",
+      "images/crochet-real-1.jpg",
+      "images/motorbike-ride.jpg",
+      "images/team.jpg"
+    ]
+  },
+  "about": {
+    "label": "Who We Are",
+    "heading": "A small team with a big heart",
+    "image": "images/about.jpg",
+    "paragraphs": [
+      "After a private visit to the children's home with her family in the summer of 2024, Marcella L. had an idea: to open up space for creative thinking and hands-on making. Andreas S. and Anne S. later joined her — together we believe that creativity and practical skills can transform lives. In partnership with **Hands for an African Child (HFAAC)** in Bukomero, Uganda, we run hands-on crafting and skills programs first and foremost for the orphaned children of HFAAC — while their teachers and parents grow right alongside them, learning new skills of their own along the way.",
+      "Our first volunteers arrived in February 2025. Since then, 15 volunteers have taught on-site for a combined ten weeks, and we've helped hire and train seven local trainers who now run five ongoing programs every week during term time — computer skills, tailoring, carpentry, crafting classes and motorbike riding & maintenance. We're already back for our second intensive course in July 2026.",
+      "We are not a large NGO. We are people who show up, roll up their sleeves and craft something meaningful — together with the community."
+    ],
+    "teamNames": "Marcella L.  ·  Andreas S.  ·  Anne S.",
+    "teamPhoto": "images/team.jpg"
+  },
+  "programs": {
+    "label": "What We've Built",
+    "heading": "Five programs, running every week",
+    "intro": "What started as short volunteer visits has grown into five ongoing programs at Nuri Primary School — each one now carried forward by a local trainer, week after week, term after term.",
+    "items": [
+      {
+        "title": "💻 Computer Lab",
+        "trainer": "3 local trainers in training",
+        "photo": "images/project3.jpg",
+        "text": "Four laptops, a laser printer and a SIM-based internet hub — set up by Andy, Heinz and Jari, now being run week to week by three local trainers preparing for ICDL-equivalent certification. Children learn word processing, spreadsheets, presentations and internet safety.",
+        "detailText": "Four laptops, a laser printer and a SIM-based internet hub, teaching basic computer use, word processing, spreadsheets, presentations and internet safety. Three local trainers are being prepared to teach independently, with an eye toward ICDL-equivalent certification down the line.",
+        "galleryImages": ["images/computerlab-1.jpg", "images/computerlab-2.jpg"]
+      },
+      {
+        "title": "🪡 Tailoring Workshop",
+        "trainer": "Christine · local trainer",
+        "photo": "images/project2.jpg",
+        "text": "Sewing machines arrived at HFAAC for the first time in 2026, taught by Astrid, an experienced seamstress — students make reusable menstrual pads and skirts. Hand sewing is taught alongside, so there's always a way to sew, machine or not. Christine, our local trainer, now continues the lessons every week.",
+        "detailText": "Astrid — an experienced seamstress — together with Anne and Marcella taught machine sewing for the very first time at HFAAC, focused on reusable menstrual pads and many, many skirts. Alongside the machines, hand sewing techniques are also taught, so students have both skills whether or not a machine is free. Christine, our local trainer, now continues the lessons every week.",
+        "galleryImages": ["images/sewing-machine-1.jpg", "images/handsewing-1.jpg", "images/handsewing-2.jpg"]
+      },
+      {
+        "title": "🪵 Carpentry Course",
+        "trainer": "Patrick · foster father & woodworker",
+        "photo": "images/project1.jpg",
+        "text": "Using a mitre box saw, jigsaw, drill and pyrography pen, students measure, saw, sand and decorate their own wood pieces — Mölkky games, keychains, cutting boards and ABC learning blocks. Patrick, a foster father at HFAAC with a natural talent for woodwork, has led every session since 2025.",
+        "detailText": "Building on 2025's basics — Mölkky games, keychains, cutting boards and ABC learning blocks — students tackle more complex wood projects with a manual mitre box saw, cordless jigsaw, drill and pyrography pen, refining measuring, sawing and finishing skills.",
+        "galleryImages": ["images/woodworking-1.jpg", "images/woodworking-2.jpg"]
+      },
+      {
+        "title": "🧶 Crafting Classes",
+        "trainer": "Esther & Filder · crochet & handcrafts",
+        "photo": "images/crochet-real-1.jpg",
+        "text": "Regular crafting classes run right in school — door mats, felt crowns, handmade dolls, bags, jewelry, toys and clothing — combining crochet and hand sewing. Anne and Audrey introduced more advanced stitches and patterns in 2026, building on what Esther and Filder already teach every week.",
+        "detailText": "Led by Anne and Audrey, students built on their existing skills with more advanced stitches and patterns — making bags, jewelry, toys and clothing. Materials were partly sourced through a Relief Society service project collecting yarn and fabric back home. A few examples of what can be made, plus photos from on-site sessions:",
+        "galleryImages": ["images/crochet-example-doily.jpg", "images/crochet-example-earrings.jpg", "images/crochet-example-hat.jpg", "images/crochet-example-bunny.jpg", "images/crochet-real-1.jpg", "images/crochet-real-2.jpg"]
+      },
+      {
+        "title": "🏍️ Motorbike Riding & Maintenance",
+        "trainer": "Philip · local trainer & caretaker",
+        "photo": "images/motorbike-ride.jpg",
+        "text": "Safe Boda Boda handling, basic driving practice, road safety and simple maintenance like tyre and oil checks — led by Jari, and now continued week to week by Philip, our local trainer and caretaker of the motorbike.",
+        "detailText": "Led by Jari together with local trainer Philip, students learned safe Boda Boda handling, basic driving practice, road safety and simple maintenance like tyre and oil checks. Philip now continues as the local trainer and caretaker of the motorbike.",
+        "galleryImages": ["images/motorbike-briefing.jpg"]
+      }
+    ]
+  },
+  "milestones": {
+    "label": "How It Started",
+    "items": [
+      {
+        "image": "images/timeline-febapr.jpg",
+        "date": "February – April 2025",
+        "title": "Hannah & Emily — our first volunteers",
+        "text": "The project kicks off! Over six weeks, Hannah and Emily work with the children on bracelets, carved figures, sewn pillows, clay, mobiles — and bake a lot of cookies together. They lay the groundwork for everything that follows."
+      },
+      {
+        "image": "images/timeline-may.jpg",
+        "date": "May 2025",
+        "title": "Teacher Esther starts teaching textiles",
+        "text": "Our first local craft teacher joins. Esther specializes in traditional techniques like weaving baskets and mats from banana fibre, and begins regular textile lessons with the children."
+      },
+      {
+        "image": "images/timeline-aug.jpg",
+        "date": "July – August 2025",
+        "title": "Teacher Filder joins — Boris, Sarah & Laura visit",
+        "text": "Teacher Filder starts teaching textile work in July. In August, volunteers Boris, Sarah and Laura spend 2.5 weeks on-site, explore the local market, buy the first jigsaws and drills, and connect with Patrick, a foster father at HFAAC with a real talent for woodwork — expanding the program into technical crafts."
+      }
+    ]
+  },
+  "whatsNext": {
+    "label": "What's Next",
+    "image": "images/hfaac.jpg",
+    "upcomingTag": "🔜 Next Up",
+    "dateLabel": "📅 Coming soon · HFAAC Bukomero",
+    "heading": "Connecting HFAAC",
+    "paragraph": "Our next project is already in the pipeline: bringing internet to the entire HFAAC compound — from the medical center and community building to the teacher homes, office buildings and all the way up to the family homes. We'll start with a microwave data link over a fibre (glasfibre) connection with WiFi access points across the site, and switch to Starlink once it becomes available in the area.",
+    "thanksNote": "A huge thank you to **Terry** from the US, who is generously supporting this project — and who will help bring Starlink to HFAAC once it's available in the area.",
+    "tags": [
+      { "label": "📡 Microwave Data Link", "detail": "A wireless microwave data link will bring broadband to the HFAAC compound as the first step of the rollout." },
+      { "label": "🌐 Fibre Connection", "detail": "A fibre (glasfibre) backbone connects the core buildings for fast, stable internet across the site." },
+      { "label": "📶 WiFi Access Points", "detail": "WiFi access points spread the connection across the whole compound — from the medical center to the family homes." },
+      { "label": "🛰️ Starlink (future upgrade)", "detail": "Once available in the area, the connection will be upgraded to Starlink satellite internet for even better speed and reliability." },
+      { "label": "🏥 Medical Center", "detail": "Reliable internet will support the medical center's record-keeping and communication with outside doctors and specialists." },
+      { "label": "🏠 Family Homes", "detail": "The rollout reaches all the way up to the family homes — so every part of HFAAC gets connected, not just the school and offices." }
+    ]
+  },
+  "trainTheTrainer": {
+    "label": "How We Work",
+    "heading": "Train the trainer",
+    "intro": "We don't fly in to teach a one-off workshop and leave. Every program is built so a local trainer can carry it forward alone — teaching every week during term time, long after we've gone home.",
+    "items": [
+      { "emoji": "👩‍🏫", "name": "Esther & Filder — Crafting Classes", "text": "Our first local teachers, joined in May and July 2025. They lead crochet and handcraft lessons every week." },
+      { "emoji": "🪡", "name": "Christine — Tailoring Workshop", "text": "Trained by Astrid in 2026, Christine now continues the sewing machine and hand sewing lessons every week as our local trainer." },
+      { "emoji": "🪵", "name": "Patrick — Carpentry Course", "text": "A foster father at HFAAC with a natural talent for woodwork, Patrick joined as our third local craft teacher in 2025 and has run the carpentry course every week since." },
+      { "emoji": "🏍️", "name": "Philip — Motorbike Riding & Maintenance", "text": "Trained by Jari in 2026, Philip now teaches safe riding and basic maintenance independently, and cares for the motorbike day to day." },
+      { "emoji": "💻", "name": "Three Computer Lab trainers", "text": "Prepared in 2026 to run the new computer lab independently, with an eye toward ICDL-equivalent certification down the line." }
+    ],
+    "footerNote": "Most of our local trainers are already on HFAAC's official payroll, sponsored by Brian and Brad — a big step toward making every program financially sustainable for the long run."
+  },
+  "impact": {
+    "label": "Our Impact",
+    "heading": "Numbers that matter",
+    "intro": "Straight from our 2025 annual report — the real difference Crafting Futures has made in the Bukomero community so far.",
+    "stats": [
+      { "number": "15", "label": "Volunteers who taught on-site in 2025/2026" },
+      { "number": "10", "label": "Combined weeks spent teaching on the ground" },
+      { "number": "7", "label": "Local staff trained & employed" },
+      { "number": "100%", "label": "Of every donation goes directly into the project" }
+    ]
+  },
+  "vision": {
+    "label": "Future Vision",
+    "heading": "Where we are going",
+    "intro": "With continued support, Crafting Futures aims to grow into a self-sustaining craft education centre that empowers generations of young people in Bukomero.",
+    "items": [
+      { "title": "Multiple intensive courses every year", "text": "Grow from occasional visits to several dedicated project weeks per year with volunteers, so more children can go deeper on technical, textile and future computer skills." },
+      { "title": "Build partnerships & sponsorships", "text": "Good progress already: most of our local trainers have been added to HFAAC's official payroll, sponsored by HFAAC's Brian and Brad — a big step toward making the program financially sustainable for the long run." }
+    ]
+  },
+  "donate": {
+    "label": "Make a Difference",
+    "heading": "Support Crafting Futures",
+    "intro": "Every contribution helps us buy materials, support local teacher salaries and keep the workshops running. No donation is too small — every euro makes a real impact in Bukomero.",
+    "helpCards": [
+      { "icon": "✈️", "title": "Volunteer", "text": "Come to Uganda, bring your skills and meet great people.", "link": "mailto:info@craftingfutures.at?subject=I%20want%20to%20volunteer%20in%20Uganda" },
+      { "icon": "💶", "title": "Donate", "text": "Every cent counts and flows directly into the project.", "link": "#hfaac" },
+      { "icon": "💡", "title": "Ideas & talents", "text": "Help with fundraising, social media, texts and reports.", "link": "mailto:info@craftingfutures.at?subject=I%20have%20ideas%20or%20talents%20to%20offer" },
+      { "icon": "💻", "title": "Online courses", "text": "Teach computer skills remotely to our students.", "link": "mailto:info@craftingfutures.at?subject=I%20want%20to%20teach%20an%20online%20course" },
+      { "icon": "📣", "title": "Spread the word", "text": "Tell your friends and family about Crafting Futures.", "link": "mailto:?subject=Check%20out%20Crafting%20Futures&body=I%20wanted%20to%20share%20this%20project%20with%20you%3A%20Crafting%20Futures%20in%20Bukomero%2C%20Uganda." }
+    ],
+    "contactButton": "✉ Get in Touch",
+    "contactEmail": "info@craftingfutures.at",
+    "hfaacButton": "🌍 Donate via HFAAC",
+    "bankButton": "🏦 Bank Transfer",
+    "note": "All donations go directly to the project. We are 100% volunteer-run."
+  },
+  "hfaac": {
+    "label": "Our Partner",
+    "heading": "Hands for an African Child",
+    "image": "images/hfaac.jpg",
+    "text": "Crafting Futures operates in close partnership with **Hands for an African Child (HFAAC)** — a children's village for orphans in Bukomero, Uganda, built up since 2022. HFAAC provides the infrastructure, community connections and local support that make our work possible.",
+    "facts": [
+      "12 families care for up to 16 orphaned children each, giving them a stable home with their basic needs covered",
+      "Its own school on the grounds — Nuri Primary School",
+      "A large, self-run farm that helps finance the village",
+      "Founded by Americans Brian Matthews and Brad Andersen, but locally led and run, financed through donations and agriculture"
+    ],
+    "linkText": "Visit HFAAC Bukomero →",
+    "linkUrl": "https://www.handsforanafricanchild.org"
+  },
+  "footer": {
+    "copyright": "© 2026 Crafting Futures · A volunteer initiative by Marcella L., Andreas S. & Anne S. · Austria"
+  },
+  "bank": {
+    "beneficiary": "Andreas Suppersberger & Marcella Lex",
+    "iban": "LT50 3250 0602 4737 9236",
+    "bic": "REVOLT21",
+    "bankAddress": "Revolut Bank UAB, Konstitucijos ave. 21B, 08130, Vilnius, Lithuania",
+    "note": "100% of your transfer goes directly to the project."
+  }
+}
