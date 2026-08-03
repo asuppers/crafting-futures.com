@@ -2,9 +2,7 @@ backend:
   name: github
   repo: asuppers/crafting-futures.com
   branch: main
-  # After you deploy the Cloudflare Worker (see SETUP.md), replace the URL
-  # below with your worker's URL, e.g. https://cf-oauth.YOURNAME.workers.dev
-  base_url: https://REPLACE-WITH-YOUR-WORKER-URL.workers.dev
+  base_url: https://sveltia-cms-auth.andreas-640.workers.dev
 
 media_folder: "images"
 public_folder: "images"
