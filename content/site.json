@@ -34,13 +34,13 @@
     "intro": "What started as short volunteer visits has grown into five ongoing programs — each one carried forward by a local trainer, week after week, term after term.",
     "items": [
       {
-        "title": "💻 Computer Lab",
+        "title": "💻 The Computer Lab",
         "trainer": "3 local trainers in training",
         "photo": "images/project3.jpg",
-        "text": "Four laptops, a laser printer and a SIM-based internet hub — set up by Andy, Heinz and Jari, now being run week to week by three local trainers preparing for ICDL-equivalent certification. Children learn word processing, spreadsheets, presentations and internet safety.",
-        "detailText": "Four laptops, a laser printer and a SIM-based internet hub, teaching basic computer use, word processing, spreadsheets, presentations and internet safety. Three local trainers are being prepared to teach independently, with an eye toward ICDL-equivalent certification down the line.",
+        "text": "Opened this July, our new computer lab equips children from 4th grade onwards with essential digital skills. Guided by local trainers, students learn everything from word processing to internet safety, and even prepare for an ICDL-equivalent certification. Thanks to our volunteers Andy, Heinz, and Jari, the lab is fully set up with laptops, a printer, and internet access.",
+        "detailText": "This July, a brand-new computer lab was opened at the school. Children from the 4th grade onwards now receive weekly lessons from our local trainers, learning valuable computer skills such as word processing, spreadsheets, presentations, and internet safety. Additionally, they are preparing to achieve an ICDL-equivalent certification.\n\nThe room is fully equipped with:\n\n💻 Four laptops\n\n🖨️ A laser printer\n\n🌐 A SIM-based internet hub\n\nAll of the equipment was successfully set up by our volunteers Andy, Heinz, and Jari.",
         "galleryImages": [
-          "images/computerlab-1.jpg",
+          "/images/ss_9.jpeg",
           "images/computerlab-2.jpg"
         ]
       },
