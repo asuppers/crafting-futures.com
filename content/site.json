@@ -117,22 +117,22 @@
     ]
   },
   "milestones": {
-    "label": "How It Started",
+    "label": "s",
     "items": [
       {
-        "image": "images/timeline-febapr.jpg",
+        "image": "/images/hfaac.jpg",
         "date": "February – April 2025",
         "title": "Hannah & Emily — our first volunteers",
         "text": "The project kicks off! Over six weeks, Hannah and Emily work with the children on bracelets, carved figures, sewn pillows, clay, mobiles — and bake a lot of cookies together. They lay the groundwork for everything that follows."
       },
       {
-        "image": "images/timeline-may.jpg",
+        "image": "/images/ss_25.jpg",
         "date": "May 2025",
         "title": "Teacher Esther starts teaching textiles",
         "text": "Our first local craft teacher joins. Esther specializes in traditional techniques like weaving baskets and mats from banana fibre, and begins regular textile lessons with the children."
       },
       {
-        "image": "images/timeline-aug.jpg",
+        "image": "/images/timeline-aug.jpg",
         "date": "July – August 2025",
         "title": "Teacher Filder joins — Boris, Sarah & Laura visit",
         "text": "Teacher Filder starts teaching textile work in July. In August, volunteers Boris, Sarah and Laura spend 2.5 weeks on-site, explore the local market, buy the first jigsaws and drills, and connect with Patrick, a foster father at HFAAC with a real talent for woodwork — expanding the program into technical crafts."
@@ -141,7 +141,7 @@
   },
   "whatsNext": {
     "label": "What's Next",
-    "image": "images/hfaac.jpg",
+    "image": "/images/ss_39.jpeg",
     "upcomingTag": "🔜 Next Up",
     "dateLabel": "📅 Coming soon · HFAAC Bukomero",
     "heading": "Connecting HFAAC",
@@ -176,8 +176,8 @@
   },
   "trainTheTrainer": {
     "label": "How We Work",
-    "heading": "Train the trainer",
-    "intro": "We don't fly in to teach a one-off workshop and leave. Every program is built so a local trainer can carry it forward alone — teaching every week during term time, long after we've gone home.",
+    "heading": "The trainers",
+    "intro": "We build, set up and finance the programmes, but every program is then carried  forward by a local trainer — teaching every week during term time, long after we've gone home.",
     "items": [
       {
         "emoji": "👩‍🏫",
@@ -217,11 +217,11 @@
         "label": "Volunteers who taught on-site in 2025/2026"
       },
       {
-        "number": "10",
+        "number": "37",
         "label": "Combined weeks spent teaching on the ground"
       },
       {
-        "number": "7",
+        "number": "8",
         "label": "Local staff trained & employed"
       },
       {
@@ -241,7 +241,7 @@
       },
       {
         "title": "Build partnerships & sponsorships",
-        "text": "Good progress already: most of our local trainers have been added to HFAAC's official payroll, sponsored by HFAAC's Brian and Brad — a big step toward making the program financially sustainable for the long run."
+        "text": "Good progress already: some of our local trainers have been added to HFAAC's official payroll, sponsored by HFAAC's Brian and Brad — a big step toward making the program financially sustainable for the long run."
       }
     ]
   },
