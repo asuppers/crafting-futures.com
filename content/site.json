@@ -26,7 +26,7 @@
       "In February 2025, we welcomed our first volunteers on-site. Since then, the project has grown rapidly: we have helped hire and train seven local trainers. During term time, they now run five ongoing programs every week:\n\n💻 Computer skills\n\n🧵 Tailoring\n\n🪚 Carpentry\n\n🎨 Crafting classes\n\n🏍️ Motorbike riding & maintenance\n\nOur volunteers come regularly to introduce new courses and provide intensive training for our local team."
     ],
     "teamNames": "Marcella L.  ·  Andreas S.  ·  Anne S.",
-    "teamPhoto": "images/team.jpg"
+    "teamPhoto": "/images/about.jpg"
   },
   "programs": {
     "label": "What We've Built",
@@ -63,7 +63,7 @@
       {
         "title": "🪵 The Carpentry Workshop",
         "trainer": "Patrick · foster father & woodworker",
-        "photo": "/images/ss_32.jpg",
+        "photo": "/images/ss_35.jpg",
         "text": "Under the guidance of local carpenter Patrick, teenagers are building much-needed furniture like shelves and shoe racks for their homes and school. By sawing, hammering, and sanding, they not only improve their daily living conditions but also learn practical woodworking skills for a lifetime. It's a brilliant win-win situation!",
         "detailText": "I walked into the carpentry workshop with a young boy, asking if they could help him design his own custom food board. Immediately, one of the teenagers stepped up to help us measure the wood, while another showed the boy how to cut, sand, and later decorate the piece using a woodburner.\n\nI felt like I was in a bustling hardware store! I am incredibly proud of how independently and confidently these youths have acquired such brilliant skills in a short amount of time—and how naturally they pass that knowledge on to others. Alongside much-needed furniture, they are now also crafting games and beautiful personal items.",
         "galleryImages": [
@@ -96,9 +96,9 @@
       {
         "title": "🏍️ Motorbike Riding & Maintenance",
         "trainer": "Philip · local trainer & caretaker",
-        "photo": "images/motorbike-ride.jpg",
-        "text": "Safe Boda Boda handling, basic driving practice, road safety and simple maintenance like tyre and oil checks — led by Jari, and now continued week to week by Philip, our local trainer and caretaker of the motorbike.",
-        "detailText": "Led by Jari together with local trainer Philip, students learned safe Boda Boda handling, basic driving practice, road safety and simple maintenance like tyre and oil checks. Philip now continues as the local trainer and caretaker of the motorbike.",
+        "photo": "/images/ss_6.JPG",
+        "text": "Boda bodas are the most common mode of transport in Uganda. In our new motorbike course, youths learn this highly practical, everyday skill. Led by our local trainer Philip and introduced by Jari, the students practice safe handling, road safety, and basic vehicle maintenance like tire and oil checks, ensuring they can travel safely and independently.",
+        "detailText": "Boda bodas — the local motorcycle taxis — are a vital part of life in Uganda. Almost everyone uses them, as most people cannot afford a vehicle of their own. Since July, we have been offering motorbike courses to teach this essential, everyday skill.\n\nThe training covers safe boda boda handling, basic driving practice, road safety, and simple maintenance like tire and oil checks. The program was initially introduced by our volunteer Jari and is now continued week to week by Philip, our local trainer and dedicated caretaker of the motorbike.",
         "galleryImages": [
           "images/motorbike-briefing.jpg"
         ]
