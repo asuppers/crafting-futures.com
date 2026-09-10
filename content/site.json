@@ -92,6 +92,16 @@
         "galleryImages": [
           "images/motorbike-briefing.jpg"
         ]
+      },
+      {
+        "title": "Train the Trainers",
+        "trainer": "sdf",
+        "photo": "/images/ss_25.jpg",
+        "text": "A central focus of the project ist the training of local teachers. In this way, sustainable continuation is ensured, allowing the project to grow in the long term and reach many people.",
+        "detailText": "sadf",
+        "galleryImages": [
+          "/images/ss_24.jpg"
+        ]
       }
     ]
   },
